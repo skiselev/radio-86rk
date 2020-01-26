@@ -10,8 +10,6 @@ Re-make of the Soviet Ham Radio computer published in Radio Magazine in 1986
 Component type     | Reference | Description                                 | Quantity | Possible sources and notes
 ------------------ | --------- | ------------------------------------------- | -------- | --------------------------
 PCB                |           | Radio-86RK PCB - Version 1.0                | 1        | Refer to the [RetroBrew Computers Board Inventory](https://retrobrewcomputers.org/doku.php?id=boardinventory) page for ordering information, or order from a PCB manufacturer of your choice using provided Gerber or KiCad files
-Integrated Circuit | U1        | Z80 CPU, CMOS, 40 pin DIP - Z84C00xxPEG     | 1        | Mouser [692-Z84C0010PEG](https://www.mouser.com/ProductDetail/692-Z84C0010PEG)
-Integrated Circuit | U2        | 82C55 PPI, CMOS, 40 pin DIP - CP82C55AZ     | 1        | Mouser [968-CP82C55A-5Z](https://www.mouser.com/ProductDetail/968-CP82C55A-5Z)
 Capacitor          | C1 - C32  | 0.1 uF, MLCC, 5 mm Pitch                    | 32       | Mouser [594-K104K15X7RF53H5](https://www.mouser.com/ProductDetail/594-K104K15X7RF53H5)
 Capacitor          | C33 - C38 | 47 uF, Electrolytic                         | 6 	      |
 Capacitor          | C39       | 1 uF, MLCC, 5 mm Pitch                      | 1        |
@@ -47,7 +45,7 @@ Integrated Circuit | U1        | Intel 8080A / КР580ВМ80А, CPU             
 Integrated Circuit | U2        | Intel 8224 / КР580ГФ24, Clock Generator     | 1        |
 Integrated Circuit | U3        | Intel 8251А / КР580ВВ51А, USART             | 1        |
 Integrated Circuit | U4        | Intel 8253 / КР580ВИ53, PIT                 | 1        |
-Integrated Circuit | U5, U6    | Intel 8255А / КР580ВВ55А, PPI               | 2        |
+Integrated Circuit | U5, U6    | Intel 8255А / КР580ВВ55А, PPI               | 2        | Mouser [968-CP82C55A-5Z](https://www.mouser.com/ProductDetail/968-CP82C55A-5Z)
 Integrated Circuit | U7        | Intel 8257 / КР580ВТ57, DMA Controller      | 1        |
 Integrated Circuit | U8        | Intel 8275 / КР580ВГ75, CRT Controller      | 1        |
 Integrated Circuit | U9        | AS6C62256, SRAM 32Kx8                       | 1        |
