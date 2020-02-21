@@ -1,7 +1,7 @@
 (export (version D)
   (design
-    (source "C:\\Users\\skiselev\\Documents\\My Projects\\Radio-RK86-2in1\\Radio-86RK.sch")
-    (date "1/29/2020 10:28:20 AM")
+    (source "C:\\Users\\skiselev\\Documents\\My Projects\\Radio-86RK-2in1\\Radio-86RK.sch")
+    (date "2/20/2020 11:41:48 AM")
     (tool "Eeschema (5.1.0)-1")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -61,7 +61,7 @@
   (components
     (comp (ref U2)
       (value 8224/КР580ГФ24)
-      (footprint My_Components:IC_DIP20_300)
+      (footprint My_Components:IC_DIP16_300)
       (libsource (lib my_components) (part 8224) (description "8224 Clock Generator for 8080 CPU"))
       (sheetpath (names /) (tstamps /))
       (tstamp 5931FAFC))
@@ -749,7 +749,7 @@
       (sheetpath (names /Keyboard/) (tstamps /5E1E4EF5/))
       (tstamp 5F07BF16))
     (comp (ref U21)
-      (value TL071/К140УД6)
+      (value TL071/КР140УД608)
       (footprint My_Components:IC_DIP8_300)
       (libsource (lib Amplifier_Operational) (part TL071) (description "Single Low-Noise JFET-Input Operational Amplifiers, DIP-8/SOIC-8"))
       (sheetpath (names /Keyboard/) (tstamps /5E1E4EF5/))
@@ -1789,7 +1789,8 @@
         (fp IC_DIP40*))
       (fields
         (field (name Reference) U)
-        (field (name Value) 8080A))
+        (field (name Value) 8080A)
+        (field (name Footprint) *DIP*40*))
       (pins
         (pin (num 1) (name A10) (type 3state))
         (pin (num 2) (name GND) (type power_in))
@@ -1839,7 +1840,8 @@
         (fp IC_DIP18_300*))
       (fields
         (field (name Reference) U)
-        (field (name Value) 8224))
+        (field (name Value) 8224)
+        (field (name Footprint) *DIP*16*))
       (pins
         (pin (num 1) (name RESET) (type output))
         (pin (num 2) (name ~RESIN) (type input))
@@ -1863,7 +1865,8 @@
         (fp IC_DIP28_600*))
       (fields
         (field (name Reference) U)
-        (field (name Value) 8251A))
+        (field (name Value) 8251A)
+        (field (name Footprint) *DIP*28*))
       (pins
         (pin (num 1) (name D2) (type BiDi))
         (pin (num 2) (name D3) (type BiDi))
@@ -1899,7 +1902,8 @@
         (fp IC_DIP24_600*))
       (fields
         (field (name Reference) U)
-        (field (name Value) 8254))
+        (field (name Value) 8254)
+        (field (name Footprint) *DIP*24*))
       (pins
         (pin (num 1) (name D7) (type BiDi))
         (pin (num 2) (name D6) (type BiDi))
@@ -1931,7 +1935,8 @@
         (fp IC_DIP40_600*))
       (fields
         (field (name Reference) U)
-        (field (name Value) 8255))
+        (field (name Value) 8255)
+        (field (name Footprint) *DIP*40*))
       (pins
         (pin (num 1) (name PA3) (type 3state))
         (pin (num 2) (name PA2) (type 3state))
@@ -1981,7 +1986,8 @@
         (fp DIP40_600))
       (fields
         (field (name Reference) U)
-        (field (name Value) 8257))
+        (field (name Value) 8257)
+        (field (name Footprint) *DIP*40*))
       (pins
         (pin (num 1) (name ~IOR) (type BiDi))
         (pin (num 2) (name ~IOW) (type BiDi))
@@ -2031,7 +2037,8 @@
         (fp IC_DIP40_600*))
       (fields
         (field (name Reference) U)
-        (field (name Value) 8275))
+        (field (name Value) 8275)
+        (field (name Footprint) *DIP*40*))
       (pins
         (pin (num 1) (name LC3) (type output))
         (pin (num 2) (name LC2) (type output))
@@ -2286,11 +2293,11 @@
       (node (ref U12) (pin 1))
       (node (ref U19) (pin 12)))
     (net (code 15) (name "Net-(U12-Pad11)")
-      (node (ref U12) (pin 11))
-      (node (ref U7) (pin 8)))
+      (node (ref U7) (pin 8))
+      (node (ref U12) (pin 11)))
     (net (code 17) (name "Net-(U19-Pad13)")
-      (node (ref U7) (pin 9))
-      (node (ref U19) (pin 13)))
+      (node (ref U19) (pin 13))
+      (node (ref U7) (pin 9)))
     (net (code 18) (name VCC)
       (node (ref U17) (pin 14))
       (node (ref R12) (pin 1))
@@ -2522,19 +2529,19 @@
       (node (ref U9) (pin 26)))
     (net (code 32) (name A14)
       (node (ref U1) (pin 39))
-      (node (ref U14) (pin 3))
+      (node (ref U9) (pin 1))
       (node (ref U12) (pin 6))
-      (node (ref U9) (pin 1)))
-    (net (code 33) (name ~IOR)
-      (node (ref U7) (pin 1))
-      (node (ref U18) (pin 13))
-      (node (ref RN1) (pin 2)))
-    (net (code 34) (name "Net-(U19-Pad6)")
-      (node (ref U20) (pin 4))
-      (node (ref U19) (pin 6)))
-    (net (code 35) (name "Net-(C44-Pad1)")
+      (node (ref U14) (pin 3)))
+    (net (code 33) (name "Net-(C44-Pad1)")
       (node (ref U2) (pin 14))
       (node (ref C44) (pin 1)))
+    (net (code 34) (name ~IOR)
+      (node (ref RN1) (pin 2))
+      (node (ref U18) (pin 13))
+      (node (ref U7) (pin 1)))
+    (net (code 35) (name "Net-(U19-Pad6)")
+      (node (ref U19) (pin 6))
+      (node (ref U20) (pin 4)))
     (net (code 36) (name /DACK)
       (node (ref U8) (pin 6))
       (node (ref U7) (pin 14)))
