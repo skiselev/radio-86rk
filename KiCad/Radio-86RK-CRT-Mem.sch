@@ -1518,12 +1518,6 @@ F 3 "" H 1300 5900 50  0000 C CNN
 $EndComp
 Text Notes 5800 7000 0    120  ~ 0
 Spare
-Wire Bus Line
-	1300 600  1300 1400
-Wire Bus Line
-	3600 600  3600 5400
-Wire Bus Line
-	1400 1800 1400 5700
 $Comp
 L Device:CP1 C?
 U 1 1 6203B78D
@@ -1537,4 +1531,10 @@ F 3 "" H 10450 5700 50  0000 C CNN
 	1    10450 5700
 	0    1    -1   0   
 $EndComp
+Wire Bus Line
+	1300 600  1300 1400
+Wire Bus Line
+	3600 600  3600 5400
+Wire Bus Line
+	1400 1800 1400 5700
 $EndSCHEMATC

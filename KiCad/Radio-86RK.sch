@@ -17,12 +17,12 @@ $EndDescr
 $Comp
 L my_components:8224 U2
 U 1 1 5931FAFC
-P 2500 1650
-F 0 "U2" H 2100 2450 60  0000 L CNN
-F 1 "8224/КР580ГФ24" H 1600 2350 60  0000 L CNN
-F 2 "My_Components:IC_DIP16_300" H 2500 1600 60  0001 C CNN
-F 3 "" H 2500 1600 60  0000 C CNN
-	1    2500 1650
+P 2600 1650
+F 0 "U2" H 2200 2450 60  0000 L CNN
+F 1 "8224/КР580ГФ24" H 1700 2350 60  0000 L CNN
+F 2 "My_Components:IC_DIP16_300" H 2600 1600 60  0001 C CNN
+F 3 "" H 2600 1600 60  0000 C CNN
+	1    2600 1650
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -84,75 +84,20 @@ Text Label 5800 3400 0    60   ~ 0
 D6
 Text Label 5800 3500 0    60   ~ 0
 D7
-NoConn ~ 1900 1400
-$Comp
-L my_components:Switch_Tactile_Vertical SW67
-U 1 1 5932249E
-P 700 2200
-F 0 "SW67" H 850 2300 50  0000 C CNN
-F 1 "Reset" H 550 2300 50  0000 C CNN
-F 2 "My_Components:Switch_Tactile_6mm_Right" H 700 2200 60  0001 C CNN
-F 3 "" H 700 2200 60  0000 C CNN
-	1    700  2200
-	0    -1   1    0   
-$EndComp
-$Comp
-L Device:R R6
-U 1 1 593227E4
-P 1200 1550
-F 0 "R6" V 1280 1550 50  0000 C CNN
-F 1 "1k" V 1200 1550 50  0000 C CNN
-F 2 "My_Components:Res_762" V 1130 1550 50  0001 C CNN
-F 3 "" H 1200 1550 50  0000 C CNN
-	1    1200 1550
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R14
-U 1 1 59322958
-P 1000 1550
-F 0 "R14" V 1080 1550 50  0000 C CNN
-F 1 "1k" V 1000 1550 50  0000 C CNN
-F 2 "My_Components:Res_762" V 930 1550 50  0001 C CNN
-F 3 "" H 1000 1550 50  0000 C CNN
-	1    1000 1550
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D1
-U 1 1 593229C9
-P 700 1550
-F 0 "D1" H 700 1650 50  0000 C CNN
-F 1 "1N4148" H 700 1450 50  0000 C CNN
-F 2 "My_Components:Diode_762" H 700 1550 50  0001 C CNN
-F 3 "" H 700 1550 50  0000 C CNN
-	1    700  1550
-	0    -1   1    0   
-$EndComp
+NoConn ~ 2000 1400
 $Comp
 L power:VCC #PWR01
 U 1 1 59322D86
-P 1000 1200
-F 0 "#PWR01" H 1000 1050 50  0001 C CNN
-F 1 "VCC" H 1000 1350 50  0000 C CNN
-F 2 "" H 1000 1200 50  0000 C CNN
-F 3 "" H 1000 1200 50  0000 C CNN
-	1    1000 1200
+P 700 1300
+F 0 "#PWR01" H 700 1150 50  0001 C CNN
+F 1 "VCC" H 700 1450 50  0000 C CNN
+F 2 "" H 700 1300 50  0000 C CNN
+F 3 "" H 700 1300 50  0000 C CNN
+	1    700  1300
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:GND #PWR02
-U 1 1 59322F98
-P 1100 2700
-F 0 "#PWR02" H 1100 2450 50  0001 C CNN
-F 1 "GND" H 1100 2550 50  0000 C CNN
-F 2 "" H 1100 2700 50  0000 C CNN
-F 3 "" H 1100 2700 50  0000 C CNN
-	1    1100 2700
-	1    0    0    -1  
-$EndComp
-NoConn ~ 3100 2200
-Text Label 3100 2000 0    60   ~ 0
+NoConn ~ 3200 2200
+Text Label 3200 2000 0    60   ~ 0
 TTL_CLK
 NoConn ~ 4600 2100
 Text Label 4600 3000 2    60   ~ 0
@@ -176,9 +121,9 @@ Text Label 4300 2700 0    60   ~ 0
 INTE
 Text Label 4600 2900 2    60   ~ 0
 DBIN
-Text Label 3100 1600 0    60   ~ 0
+Text Label 3200 1600 0    60   ~ 0
 READY
-Text Label 3100 1400 0    60   ~ 0
+Text Label 3200 1400 0    60   ~ 0
 RESET
 Text Notes 4600 700  0    120  ~ 0
 CPU
@@ -223,7 +168,7 @@ F 3 "" H 7600 3300 50  0000 C CNN
 $EndComp
 NoConn ~ 7800 1600
 Wire Wire Line
-	3100 1800 3200 1800
+	3200 1800 3300 1800
 Connection ~ 7600 3200
 Wire Wire Line
 	7700 3200 7600 3200
@@ -283,47 +228,19 @@ Wire Wire Line
 Wire Wire Line
 	4600 2600 4000 2600
 Wire Wire Line
-	3100 2000 3400 2000
-Connection ~ 900  2600
-Wire Wire Line
-	900  2200 900  2600
-Wire Wire Line
-	850  2200 900  2200
-Connection ~ 1100 2600
-Wire Wire Line
-	1100 2300 1100 2600
-Wire Wire Line
-	700  2600 900  2600
-Wire Wire Line
-	700  2500 700  2600
-Wire Wire Line
-	1000 1200 1000 1300
+	3200 2000 3500 2000
 Wire Wire Line
 	700  1300 700  1400
-Connection ~ 1100 1800
 Wire Wire Line
-	1000 1700 1000 1800
-Connection ~ 700  1800
+	1400 1100 1550 1100
 Wire Wire Line
-	700  1700 700  1800
+	1400 1400 1400 1100
 Wire Wire Line
-	700  1800 700  1900
+	1900 1200 1900 1400
 Wire Wire Line
-	1200 1300 1200 1400
+	2000 1200 1900 1200
 Wire Wire Line
-	1200 2000 1200 1700
-Wire Wire Line
-	1900 2000 1200 2000
-Wire Wire Line
-	1300 1100 1450 1100
-Wire Wire Line
-	1300 1400 1300 1100
-Wire Wire Line
-	1800 1200 1800 1400
-Wire Wire Line
-	1900 1200 1800 1200
-Wire Wire Line
-	1900 1100 1650 1100
+	2000 1100 1750 1100
 Wire Wire Line
 	5800 3500 6000 3500
 Wire Wire Line
@@ -377,17 +294,17 @@ Wire Wire Line
 Wire Wire Line
 	4600 3300 4500 3300
 Wire Wire Line
-	1900 2200 1800 2200
+	2000 2200 1800 2200
 Wire Wire Line
-	1400 1600 1900 1600
+	1400 1600 2000 1600
 Wire Wire Line
-	4600 1600 3500 1600
+	4600 1600 3600 1600
 Wire Wire Line
-	3100 1400 3600 1400
+	3200 1400 3700 1400
 Wire Wire Line
-	4600 1200 3100 1200
+	4600 1200 3200 1200
 Wire Wire Line
-	3100 1100 4600 1100
+	3200 1100 4600 1100
 Text Label 7800 1200 0    60   ~ 0
 ~PIT_CS
 Text Label 7800 1400 0    60   ~ 0
@@ -400,16 +317,6 @@ Wire Wire Line
 	6600 1600 6800 1600
 Wire Wire Line
 	6700 1800 6700 1900
-Wire Wire Line
-	900  2600 1100 2600
-Wire Wire Line
-	1100 2600 1100 2700
-Wire Wire Line
-	1000 1300 1000 1400
-Wire Wire Line
-	1100 1800 1100 2000
-Wire Wire Line
-	1100 1800 1900 1800
 Text Notes 8200 1700 0    60   ~ 0
 (E000-EFFF)
 Text Notes 8200 1600 0    60   ~ 0
@@ -461,12 +368,12 @@ $EndComp
 $Comp
 L Device:Crystal_Small Y1
 U 1 1 78C32BD7
-P 1550 1100
-F 0 "Y1" H 1450 1000 50  0000 C CNN
-F 1 "16MHz" H 1650 1000 50  0000 C CNN
-F 2 "My_Components:Crystal_HC-49U_Vert" H 1550 1100 50  0001 C CNN
-F 3 "~" H 1550 1100 50  0001 C CNN
-	1    1550 1100
+P 1650 1100
+F 0 "Y1" H 1550 1000 50  0000 C CNN
+F 1 "16MHz" H 1750 1000 50  0000 C CNN
+F 2 "My_Components:Crystal_HC-49U_Vert" H 1650 1100 50  0001 C CNN
+F 3 "~" H 1650 1100 50  0001 C CNN
+	1    1650 1100
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -604,17 +511,6 @@ F 3 "" H 7300 2200 50  0001 C CNN
 	1    7300 2200
 	1    0    0    -1  
 $EndComp
-$Comp
-L Device:C C39
-U 1 1 59322A46
-P 1100 2150
-F 0 "C39" H 1125 2250 50  0000 L CNN
-F 1 "1uF" H 1125 2050 50  0000 L CNN
-F 2 "My_Components:Cap_Cer_508" H 1138 2000 50  0001 C CNN
-F 3 "" H 1100 2150 50  0000 C CNN
-	1    1100 2150
-	1    0    0    -1  
-$EndComp
 Entry Wire Line
 	6000 2800 6100 2900
 Entry Wire Line
@@ -702,43 +598,39 @@ $EndComp
 Wire Wire Line
 	1400 1600 1400 2900
 Wire Wire Line
-	1400 2900 3700 2900
-Wire Wire Line
-	3700 2900 3700 1800
-Wire Wire Line
-	3700 1800 4600 1800
+	1400 2900 3300 2900
 $Comp
 L power:GND #PWR0145
 U 1 1 5EB9AB73
-P 2500 2600
-F 0 "#PWR0145" H 2500 2350 50  0001 C CNN
-F 1 "GND" H 2500 2450 50  0000 C CNN
-F 2 "" H 2500 2600 50  0001 C CNN
-F 3 "" H 2500 2600 50  0001 C CNN
-	1    2500 2600
+P 2600 2600
+F 0 "#PWR0145" H 2600 2350 50  0001 C CNN
+F 1 "GND" H 2600 2450 50  0000 C CNN
+F 2 "" H 2600 2600 50  0001 C CNN
+F 3 "" H 2600 2600 50  0001 C CNN
+	1    2600 2600
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:VCC #PWR0171
 U 1 1 5EBD2C33
-P 2500 700
-F 0 "#PWR0171" H 2500 550 50  0001 C CNN
-F 1 "VCC" H 2500 850 50  0000 C CNN
-F 2 "" H 2500 700 50  0001 C CNN
-F 3 "" H 2500 700 50  0001 C CNN
-	1    2500 700 
+P 2600 700
+F 0 "#PWR0171" H 2600 550 50  0001 C CNN
+F 1 "VCC" H 2600 850 50  0000 C CNN
+F 2 "" H 2600 700 50  0001 C CNN
+F 3 "" H 2600 700 50  0001 C CNN
+	1    2600 700 
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2500 700  2500 800 
+	2600 700  2600 800 
 Wire Wire Line
-	2500 2500 2500 2600
-Connection ~ 3500 1600
+	2600 2500 2600 2600
+Connection ~ 3600 1600
 Wire Wire Line
-	3500 1600 3100 1600
-Connection ~ 3600 1400
+	3600 1600 3200 1600
+Connection ~ 3700 1400
 Wire Wire Line
-	3600 1400 4600 1400
+	3700 1400 4600 1400
 Wire Wire Line
 	3800 2400 4600 2400
 Wire Wire Line
@@ -1114,7 +1006,7 @@ RESET
 Wire Wire Line
 	6600 3600 6600 4300
 Wire Wire Line
-	6600 4300 3600 4300
+	6600 4300 3700 4300
 Wire Bus Line
 	1100 7900 6100 7900
 Wire Bus Line
@@ -1269,16 +1161,6 @@ Wire Wire Line
 	3100 6600 3400 6600
 Wire Wire Line
 	3900 7000 4600 7000
-Connection ~ 1000 1300
-Wire Wire Line
-	1000 1300 1200 1300
-Connection ~ 1000 1800
-Wire Wire Line
-	1000 1800 1100 1800
-Wire Wire Line
-	700  1800 1000 1800
-Wire Wire Line
-	700  1300 1000 1300
 Wire Wire Line
 	4300 6300 4300 6000
 Wire Wire Line
@@ -1299,9 +1181,9 @@ Wire Wire Line
 	3100 5500 3900 5500
 Wire Wire Line
 	3900 2300 4600 2300
-Connection ~ 3600 3400
+Connection ~ 3700 3400
 Wire Wire Line
-	3600 4300 3600 3400
+	3700 4300 3700 3400
 Wire Wire Line
 	3900 2300 3900 5500
 Wire Wire Line
@@ -1309,17 +1191,17 @@ Wire Wire Line
 Wire Wire Line
 	3800 2400 3800 3500
 Wire Wire Line
-	3600 3400 1300 3400
+	3700 3400 1300 3400
 Wire Wire Line
-	3600 1400 3600 3400
+	3700 1400 3700 3400
 Wire Wire Line
-	3500 3300 1400 3300
+	3600 3300 1400 3300
 Wire Wire Line
-	3500 1600 3500 3300
+	3600 1600 3600 3300
 Wire Wire Line
-	3400 3200 1500 3200
+	3500 3200 1500 3200
 Wire Wire Line
-	3400 2000 3400 3200
+	3500 2000 3500 3200
 Wire Wire Line
 	4000 2900 4600 2900
 Wire Wire Line
@@ -1343,7 +1225,7 @@ Wire Wire Line
 Connection ~ 4100 7400
 Wire Wire Line
 	4100 7400 4100 7500
-Text GLabel 3200 1800 2    60   Output ~ 0
+Text GLabel 3300 1800 2    60   Output ~ 0
 OSC
 Text GLabel 1600 3100 2    60   Output ~ 0
 TTL_CLK
@@ -1678,20 +1560,128 @@ $EndSheet
 Text Notes 550  900  0    120  ~ 0
 Clock Generation\nand Reset
 Wire Wire Line
-	1300 1400 1400 1400
+	1400 1400 1500 1400
 Wire Wire Line
-	1700 1400 1800 1400
+	1800 1400 1900 1400
 $Comp
 L Device:C C44
 U 1 1 5F448F09
-P 1550 1400
-F 0 "C44" V 1600 1200 50  0000 L CNN
-F 1 "10pF" V 1600 1450 50  0000 L CNN
-F 2 "My_Components:Cap_Cer_508" H 1588 1250 50  0001 C CNN
-F 3 "" H 1550 1400 50  0000 C CNN
-	1    1550 1400
+P 1650 1400
+F 0 "C44" V 1700 1200 50  0000 L CNN
+F 1 "10pF" V 1700 1450 50  0000 L CNN
+F 2 "My_Components:Cap_Cer_508" H 1688 1250 50  0001 C CNN
+F 3 "" H 1650 1400 50  0000 C CNN
+	1    1650 1400
 	0    1    1    0   
 $EndComp
+$Comp
+L Device:C C39
+U 1 1 59322A46
+P 1200 2250
+F 0 "C39" H 1225 2350 50  0000 L CNN
+F 1 "1nF" H 1225 2150 50  0000 L CNN
+F 2 "My_Components:Cap_Cer_508" H 1238 2100 50  0001 C CNN
+F 3 "" H 1200 2250 50  0000 C CNN
+	1    1200 2250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1200 2800 1200 2900
+Wire Wire Line
+	1100 2800 1200 2800
+Wire Wire Line
+	900  2700 900  2800
+Wire Wire Line
+	900  2800 1100 2800
+Wire Wire Line
+	1200 2400 1200 2800
+Connection ~ 1200 2800
+Wire Wire Line
+	1050 2400 1100 2400
+Wire Wire Line
+	1100 2400 1100 2800
+Connection ~ 1100 2800
+$Comp
+L power:GND #PWR02
+U 1 1 59322F98
+P 1200 2900
+F 0 "#PWR02" H 1200 2650 50  0001 C CNN
+F 1 "GND" H 1200 2750 50  0000 C CNN
+F 2 "" H 1200 2900 50  0000 C CNN
+F 3 "" H 1200 2900 50  0000 C CNN
+	1    1200 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L my_components:Switch_Tactile_Vertical SW67
+U 1 1 5932249E
+P 900 2400
+F 0 "SW67" H 1050 2500 50  0000 C CNN
+F 1 "Reset" H 750 2500 50  0000 C CNN
+F 2 "My_Components:Switch_Tactile_6mm_Right" H 900 2400 60  0001 C CNN
+F 3 "" H 900 2400 60  0000 C CNN
+	1    900  2400
+	0    -1   1    0   
+$EndComp
+$Comp
+L my_components:DS1233 U27
+U 1 1 5E5ED4FB
+P 700 1700
+F 0 "U27" H 750 2050 50  0000 L CNN
+F 1 "DS1233" H 750 1950 50  0000 L CNN
+F 2 "My_Components:Transistor_TO92_EBC_254" H 700 1100 50  0001 C CNN
+F 3 "https://datasheets.maximintegrated.com/en/ds/DS1233.pdf" H 700 1700 50  0001 C CNN
+	1    700  1700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	900  2000 1200 2000
+Wire Wire Line
+	900  2000 900  2100
+Connection ~ 1200 2000
+Wire Wire Line
+	1200 2000 1200 2100
+Wire Wire Line
+	2000 2000 1900 2000
+Wire Wire Line
+	1600 2000 1500 2000
+Wire Wire Line
+	1500 1900 1500 2000
+Wire Wire Line
+	1200 1700 1200 2000
+$Comp
+L power:VCC #PWR0198
+U 1 1 5E863578
+P 1500 1900
+F 0 "#PWR0198" H 1500 1750 50  0001 C CNN
+F 1 "VCC" H 1500 2050 50  0000 C CNN
+F 2 "" H 1500 1900 50  0000 C CNN
+F 3 "" H 1500 1900 50  0000 C CNN
+	1    1500 1900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	700  2000 700  2800
+Wire Wire Line
+	3300 2900 3300 2200
+Wire Wire Line
+	3300 2200 4000 2200
+Wire Wire Line
+	4000 2200 4000 1800
+Wire Wire Line
+	4000 1800 4600 1800
+Wire Wire Line
+	1700 1800 1700 1700
+Wire Wire Line
+	1700 1700 1200 1700
+Wire Wire Line
+	1700 1800 2000 1800
+Connection ~ 1200 1700
+Wire Wire Line
+	1200 1700 1100 1700
+Wire Wire Line
+	900  2800 700  2800
+Connection ~ 900  2800
 Wire Bus Line
 	6300 900  6300 4400
 Wire Bus Line
@@ -1708,4 +1698,15 @@ Wire Bus Line
 	9800 4600 9800 6100
 Wire Bus Line
 	6100 900  6100 2500
+$Comp
+L Device:R R6
+U 1 1 593227E4
+P 1750 2000
+F 0 "R6" V 1830 2000 50  0000 C CNN
+F 1 "1k" V 1750 2000 50  0000 C CNN
+F 2 "My_Components:Res_762" V 1680 2000 50  0001 C CNN
+F 3 "" H 1750 2000 50  0000 C CNN
+	1    1750 2000
+	0    1    1    0   
+$EndComp
 $EndSCHEMATC

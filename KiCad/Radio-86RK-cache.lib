@@ -1397,6 +1397,24 @@ X ~ GND -400 -600 250 R 50 50 1 1 I
 ENDDRAW
 ENDDEF
 #
+# my_components_DS1233
+#
+DEF my_components_DS1233 U 0 20 Y Y 1 F N
+F0 "U" 100 350 50 H V L CNN
+F1 "my_components_DS1233" 100 250 50 H V L CNN
+F2 "My_Components:Transistor_TO92_EBC_254" 0 -600 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ *TO-92*
+$ENDFPLIST
+DRAW
+S -100 200 300 -200 0 1 0 f
+X GND 1 0 -300 100 U 50 50 1 1 W
+X ~RESET 2 400 0 100 L 50 50 1 1 O
+X VCC 3 0 300 100 D 50 50 1 1 W
+ENDDRAW
+ENDDEF
+#
 # my_components_HOLE
 #
 DEF ~my_components_HOLE HOLE 0 40 N N 1 F N
