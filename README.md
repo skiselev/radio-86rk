@@ -17,7 +17,7 @@ Capacitor          | C40       | 22 nF, MLCC, 5 mm Pitch                     | 1
 Capacitor          | C41       | 10 nF, MLCC, 5 mm Pitch                     | 1        | Mouser [810-FG28X7R1H103KNT0](https://www.mouser.com/ProductDetail/810-FG28X7R1H103KNT0)
 Capacitor          | C42       | 2.2 nF, MLCC, 5 mm Pitch                    | 1        | Mouser [810-FG28X7R1H222KNT0](https://www.mouser.com/ProductDetail/810-FG28X7R1H222KNT0)
 Capacitor          | C43       | 1 nF, MLCC, 5 mm Pitch                      | 1        | Mouser [810-FG28C0G1H102JNT6](https://www.mouser.com/ProductDetail/810-FG28C0G1H102JNT6)
-Capacitor          | C44       | 10 pF, MLCC, 5 mm Pitch                     | 1        | Mouser [810-FG28C0G1H100DNT00](https://www.mouser.com/ProductDetail/810-FG28C0G1H100DNT00)
+Capacitor          | C44       | 10 pF, MLCC, 5 mm Pitch                     | 1        | Mouser [810-FG28C0G1H100DNT00](https://www.mouser.com/ProductDetail/810-FG28C0G1H100DNT0)
 Diode              | D1 - D9  | 1N4148                                       | 9        | Mouser [512-1N4148](https://www.mouser.com/ProductDetail/512-1N4148)
 LED                | D10       | LED Indicator, 3 mm, Green                  | 1        | Mouser [593-VAOL-3HDE4](https://www.mouser.com/ProductDetail/593-VAOL-3HDE4)
 LED                | D11       | LED Indicator, 3 mm, Yellow                 | 1        | Mouser [593-VAOL-3HCE4](https://www.mouser.com/ProductDetail/593-VAOL-3HCE4)
