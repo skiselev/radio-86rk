@@ -18,6 +18,26 @@ Re-make of the Soviet Ham Radio computer published in Radio Magazine in 1986
   * [Known Issues](#known-issues)
 
 ## Introduction
+This project is a remake of [Radio-86RK](https://en.wikipedia.org/wiki/Radio-86RK) - a soviet ham radio computer. The original design was published in Radio Magazine, an amateur radio and DIY electronics oriented publication, starting from [April 1986](http://archive.radio.ru/web/1986/04/027/). Hence the "Radio" and "86" in the name ("RK" stands for ham radio computer).
+
+The goal of the original design was to create a computer that can be built relatively easily and cheaply using commonly available components. Therefore it included several short-cuts. For example it didn't use 8228 bus controller. Instead, it uses */WR* and *DBIN* CPU signals instead to distinguish between write and read CPU cycles. Since the system doesn't decode I/O control signals, all the I/O devices are memory mapped. Another optimization is the use of DMA controller for both supplying the data to the CRT controller and for refreshing DRAMs. The system didn't support interrupts. The sound was implemented using *INTE* output of the CPU. The software would use **EI**/**DI** instructions to generate sound. There are no graphics capabilities. The font size was limited to 128 characters (8275 CRT controller limitation), and given that it had to support both Latin and Cyrillic ABCs, it only had capital letters for both ABCs. The CRT controller shares 16 MHz clock oscillator with the CPU (not uncommon in other home computers at that time period).
+
+Despite the limitations, the design was fairly successful, many people have built this computer, and there are some that still building one, this project included. In addtion, several factories manufactured computers based on (but not always compatible with) this design - e.g. [Mikrosha](https://oldcomputer.info/8bit/mikrosha/index.htm), [Apogee BK-01](https://ru.wikipedia.org/wiki/%D0%90%D0%BF%D0%BE%D0%B3%D0%B5%D0%B9_%D0%91%D0%9A-01), and a few more.
+
+### Specifications of the Original Design
+  * KR580VM80A (Intel 8080) CPU @ 1.78 MHz (16 MHz divided by 9)
+  * 16 KiB to 32 KiB DRAM, 2 KiB ROM (monitor software)
+  * KR580VG75 (Intel 8275) CRT controller which works together with KR580VT57 (Intel 8257) DMA controller. 1 KiB ROM is used for font
+  * Two KR580VV55A (Intel 8255A) PPIs. One is used for keyboard and cassette I/O, another one for the extension port
+  * Normally the computer consisted of 2 or 3 PCBs - the mainboard, the keyboard, and the keypad.
+
+### Modifications to the Original Design
+ * 16 DRAM ICs replaced with a single 32 KiB SRAM IC
+ * Font ROM size increased to 2 KiB, so that it fits an alternative font. CRT controller GPA0 attribute is used to switch between fonts.
+ * Reverse video attribute implemented in CRT controller
+ * Added 8251 USART and 8253 timer. The timer is used for dividing the clock for USART and for sound generation.
+ * Single board design, including an integrated mechanical keyboard
+ * The work is largely based on [Radio-86RК-SRAM](http://radio86rk.pbworks.com/w/page/58467718/Radio-86R%D0%9A-SRAM) project created by Alexey Khudyakov (alexcp).
 
 ![Radio-86RK](images/Radio-86PK-With_Keyboard.jpg)
 
