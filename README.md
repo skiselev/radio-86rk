@@ -3,6 +3,120 @@ Re-make of the Soviet Ham Radio computer published in Radio Magazine in 1986
 
 ## Hardware Documentation
 
+## Table of Content
+* [Introduction](#introduction)
+* [Specifications](#specifications)
+* [Hardware Documentation](#hardware-documentation)
+  * [Schematic and PCB Layout](#schematic-and-pcb-layout)
+  * [Connectors](#connectors)
+  * [Bill of Materials](#bill-of-materials)
+  * [Memory Map](#memory-map)
+* [Firmware Documentation](#firmware-documentation)
+  * [Monitor](#monitor)
+* [Release Notes](#release-notes)
+  * [Changes](#changes)
+  * [Known Issues](#known-issues)
+
+## Introduction
+
+![Radio-86RK](images/Radio-86PK-With_Keyboard.jpg)
+
+## Specifications
+* Processor: Intel 8080A / КР580ВМ80А CPU running at 1.78 MHz
+* Memory:
+  * RAM: 32 KiB SRAM
+  * ROM: 2 KiB UV EPROM with system monitor software
+* Video: Intel 8275 / КР580ВГ75 CRT Controller
+  * Alphanumeric display
+  * 2 KiB UV EPROM with font
+  * Composite video output (50 Hz)
+* Audio:
+  * Intel 8253 / КР580ВИ53 (single channel)
+  * CPU INTE output
+* Parallel Interface:
+  * Intel 8255А / КР580ВВ55А PPI
+  * 26-pin extpansion header
+* Serial Interface:
+  * Intel 8251А / КР580ВВ51А USART
+  * DE-9 connector
+* Built-in 66-keys keyboard
+* Cassette recorder interface
+
+## Hardware Documentation
+
+### Schematic and PCB Layout
+
+[Schematic - Version 1.1](KiCad/Radio-86RK-Schematic-1.1.pdf)
+
+[PCB Layout - Version 1.1](KiCad/Radio-86RK-Board-1.1.pdf)
+
+### Connectors
+
+#### J1 - Composite Video
+
+Pin | Description     
+--- | ---------------
+Tip (the inner contact) | Output: Composite Video
+Ring / Sleeve         |	Power: GND
+
+#### J2 - Power (5V)
+Connect regulated +5V power supply to this connector.
+
+Note: The 8080A CPU, clock generator, and serial port transmitters and receivers use +12V/-5V/-12V voltages. An on-board DC-DC converter (U26) is used to obtain these voltages. Instead of using the DC-DC converter it is possible to provide these voltages directly to the system using J3 connector.
+
+Pin | Description     
+--- | ---------------
+Tip (the inner contact) | Power: 5V (positive terminal)
+Barrel / Sleeve         |	Power: GND (negative terminal)
+
+#### J3 - Power (5V, 12V, -12V)
+Connect regulated 5V/12V/-12V power supply to this connector.
+
+Pin | Description     
+--- | ---------------
+1, 2, 3 | Power: GND
+4, 5, 6 |	Power: 5V
+7   |	Power: 12V
+8   |	Power: -12V
+
+#### J4 - Cassette Connector
+Pin | Description     
+--- | ---------------
+1, 2, 3, 8   | Power: GND
+4   |	Output: Sound output to cassette recorder (line level)
+5   |	Input: Sound input from cassette recorder (line level)
+6, 7 |	Not connected
+
+#### J5 - Serial Port Connector
+Pin | Description     
+--- | ---------------
+1   | Not connected: DCD
+2   | Input: RX
+3   | Output: TX
+4   | Output: DTR
+5   | Power: GND
+6   | Input: DSR
+7   | Output: RTS
+8   | Input: CTS
+9   | Not connected: RI
+
+#### J6 - Parallel Port Connector
+Pin | Description | Pin | Description
+--- | ----------- | --- | ----------------
+1   | Output: PC0 | 2   | Input: PA0
+3   | Output: PC1 | 4   | Input: PA1
+5   | Output: PC2 | 6   | Input: PA2
+7   | Output: PC3 | 8   | Input: PA3
+9   | Output: PC4 | 10  | Input: PA4
+11  | Output: PC5 | 12  | Input: PA5
+13  | Output: PC6 | 14  | Input: PA6
+15  | Output: PC7 | 16  | Input: PA7
+17  | Output: PB7 | 18  | Output: PB0
+19  | Output: PB6 | 20  | Output: PB1
+21  | Output: PB5 | 22  | Output: PB2
+23  | Output: PB4 | 24  | Output: PB3
+25  | Power: +5V  | 26  | Power: GND
+
 ### Bill of Materials
 
 [Radio-86RK project on Mouser.com](https://www.mouser.com/ProjectManager/ProjectDetail.aspx?AccessID=d3d8f92a02) - View and order all components except of the PCB, and most Intel 8xxx ICs.
@@ -74,3 +188,29 @@ IC Socket          | U12       | 20 pin DIP                                  | 1
 IC Socket          | U2, U14, U22 | 16 pin DIP                               | 3        | Mouser [517-4816-3000-CP](https://www.mouser.com/ProductDetail/517-4816-3000-CP)
 IC Socket          | U15 - U20 | 14 pin DIP                                  | 5        | Mouser [517-4814-3000-CP](https://www.mouser.com/ProductDetail/517-4814-3000-CP)
 IC Socket          | U21, U23, U24 | 8 pin DIP                               | 3        | Mouser [517-4808-3000-CP](https://www.mouser.com/ProductDetail/517-4808-3000-CP)
+
+### Memory Map
+
+## Firmware Documentation
+
+### Monitor
+
+## Changes
+* Version 1.1
+  * Fix all known issues of version 1.0
+  * Use DS1233-5 mircoprocessor supervisor to generate reset signal
+  * Implement inverion attribute for display
+
+* Version 1.0
+  * Initial version
+
+## Known Issues
+* Version 1.1
+  * Top silkscreen: "Ь" and "X" key labels are swapped
+  * Top silkscreen: More correct translation for "СС" is "SHIFT"
+  * Top silkscreen: No copyright year
+
+* Version 1.0
+  * 8224 (U2) should use DIP-16 footprint
+  * Down and Right buttons swapped
+  * Reset RC does not provide enough time for the system to properly reset at power-on
