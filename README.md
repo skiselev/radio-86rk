@@ -224,7 +224,7 @@ IC Socket          | U21, U23, U24 | 8 pin DIP                               | 3
   * **D<Start_Address>,<End_Address>** - Display memory content in hexadecimal
   * **L<Start_Address>,<End_Address>** - Display memory content in ASCII
   * **F<Start_Address>,<End_Address>,<Value>** - Fill memory with the specified value
-  * **M<Address> - Modify memory content
+  * **M<Address>** - Modify memory content
   * **T<Start_Address>,<End_Address>,<Destination_Start_Address>** - Copy memory block to destination
   * **C<Start_Address>,<End_Address>,<Destination_Start_Address>** - Compare memory block with destination
   * **S<Start_Address>,<End_Address>,<Value>** - Search memory for a value
