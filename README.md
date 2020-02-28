@@ -190,16 +190,84 @@ IC Socket          | U15 - U20 | 14 pin DIP                                  | 5
 IC Socket          | U21, U23, U24 | 8 pin DIP                               | 3        | Mouser [517-4808-3000-CP](https://www.mouser.com/ProductDetail/517-4808-3000-CP)
 
 ### Memory Map
+* 0000h - 7FFFh - SRAM
+  * 7600h - 7FFFh - Display buffer and monitor variables
+* 8000h - 8FFFh - 8255A PPI (Keyboard, Cassette recorder, Sound control)
+  * 8000h - Channel A data
+  * 8001h - Channel B data
+  * 8002h - Channel C data
+  * 8003h - Control word
+* 9000h - 9FFFh - 8253 Timer (USART Clock, Sound)
+  * 9000h - Channel 0 count
+  * 9001h - Channel 1 count
+  * 9002h - Channel 2 count
+  * 9003h - Control word
+* 0A000h - 0AFFFh - 8255A PPI (Parallel Interface)
+  * 0A000h - Channel A data
+  * 0A001h - Channel B data
+  * 0A002h - Channel C data
+  * 0A003h - Control word
+* 0B000h - 0BFFFh - 8251A USART
+  * 0B000h - Data register
+  * 0B001h - Command register
+* 0C000h - 0CFFFh - 8275 CRT Controller
+* 0D000h - 0DFFFh - Unused
+* 0E000h - 0EFFFh - 8257 DMA Controller (write only)
+* 0E000h - 0FFFFh - Monitor EPROM (read only)
 
 ## Firmware Documentation
 
 ### Monitor
 
+#### Monitor Commands
+* Memory Operations
+  * **D<Start_Address>,<End_Address>** - Display memory content in hexadecimal
+  * **L<Start_Address>,<End_Address>** - Display memory content in ASCII
+  * **F<Start_Address>,<End_Address>,<Value>** - Fill memory with the specified value
+  * **M<Address> - Modify memory content
+  * **T<Start_Address>,<End_Address>,<Destination_Start_Address>** - Copy memory block to destination
+  * **C<Start_Address>,<End_Address>,<Destination_Start_Address>** - Compare memory block with destination
+  * **S<Start_Address>,<End_Address>,<Value>** - Search memory for a value
+  * **R<ROM_Start_Address>,<ROM_End_Address>,<Destination_Start_Address>** - Read from the ROM connected to the Parallel interface to memory
+* Run Control
+  * **G<Start_Address>\[,End_Address\]** - Run code, optionally stop at the specified address
+  * **X** - Display and modify registers
+* Cassette Input/Output
+  * **O<Start_Address>,<End_Address>\[,Speed\]** - Write memory to cassette. Default speed is 1Dh / 1200 bps
+  * **I\[Offset\]\[,Speed\]** - Read data from to cassette memory at specified offset
+
+#### Monitor Subroutines:
+* 0F803h - Keyboard input
+  * Input: None
+  * Output: A - character code read from keyboard
+* 0F806h - Cassette input
+  * Input: A=0FFh - with sync; A=08h - no sync
+  * Output: A - data read from cassette
+* 0F809h - Print character to screen
+  * Input: C - character to print
+* 0F80Ch - Cassette output
+  * Input: C - data to write
+* 0F812h - Query keyboard
+  * Output: A=00h - key not pressed; A=0FFh - key pressed
+* 0F815h - Print to screen in hex
+  * Input: A - data to print
+* 0F818h - Print string
+  * Input: HL - string address
+* 0F81Bh - Get key
+  * Output: A=0FFh - key not pressed; A=0FEh - Rus/Lat; otherwise A - key code
+* 0F81Eh - Get cursor position
+  * Output: H - row, L - column
+* 0F821h - Read character from screen at current cursor position
+  * Output: A - char read from screen
+* 0F824h - Read from cassette
+  * Input: HL - offset of memory buffer to store data to
+  * Output: HL - start; DE - end; BC - checksum
+
 ## Changes
 * Version 1.1
   * Fix all known issues of version 1.0
   * Use DS1233-5 mircoprocessor supervisor to generate reset signal
-  * Implement inverion attribute for display
+  * Implement reverse video attribute
 
 * Version 1.0
   * Initial version
