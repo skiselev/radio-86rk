@@ -221,19 +221,19 @@ IC Socket          | U21, U23, U24 | 8 pin DIP                               | 3
 
 #### Monitor Commands
 * Memory Operations
-  * **D<Start_Address>,<End_Address>** - Display memory content in hexadecimal
-  * **L<Start_Address>,<End_Address>** - Display memory content in ASCII
-  * **F<Start_Address>,<End_Address>,<Value>** - Fill memory with the specified value
-  * **M<Address>** - Modify memory content
-  * **T<Start_Address>,<End_Address>,<Destination_Start_Address>** - Copy memory block to destination
-  * **C<Start_Address>,<End_Address>,<Destination_Start_Address>** - Compare memory block with destination
-  * **S<Start_Address>,<End_Address>,<Value>** - Search memory for a value
-  * **R<ROM_Start_Address>,<ROM_End_Address>,<Destination_Start_Address>** - Read from the ROM connected to the Parallel interface to memory
+  * **D\<Start_Address\>,\<End_Address\>** - Display memory content in hexadecimal
+  * **L\<Start_Address\>,\<End_Address\>** - Display memory content in ASCII
+  * **F\<Start_Address\>,\<End_Address\>,\<Value\>** - Fill memory with the specified value
+  * **M\<Address\>** - Modify memory content
+  * **T\<Start_Address\>,\<End_Address\>,\<Destination_Start_Address\>** - Copy memory block to destination
+  * **C\<Start_Address\>,\<End_Address\>,\<Destination_Start_Address\>** - Compare memory block with destination
+  * **S\<Start_Address\>,\<End_Address\>,\<Value\>** - Search memory for a value
+  * **R\<ROM_Start_Address\>,\<ROM_End_Address\>,\<Destination_Start_Address\>** - Read from the ROM connected to the Parallel interface to memory
 * Run Control
-  * **G<Start_Address>\[,End_Address\]** - Run code, optionally stop at the specified address
+  * **G\<Start_Address\>\[,End_Address\]** - Run code, optionally stop at the specified address
   * **X** - Display and modify registers
 * Cassette Input/Output
-  * **O<Start_Address>,<End_Address>\[,Speed\]** - Write memory to cassette. Default speed is 1Dh / 1200 bps
+  * **O\<Start_Address\>,\<End_Address\>\[,Speed\]** - Write memory to cassette. Default speed is 1Dh / 1200 bps
   * **I\[Offset\]\[,Speed\]** - Read data from to cassette memory at specified offset
 
 #### Monitor Subroutines:
