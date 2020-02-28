@@ -263,7 +263,9 @@ IC Socket          | U21, U23, U24 | 8 pin DIP                               | 3
   * Input: HL - offset of memory buffer to store data to
   * Output: HL - start; DE - end; BC - checksum
 
-## Changes
+## Release Notes
+
+### Changes
 * Version 1.1
   * Fix all known issues of version 1.0
   * Use DS1233-5 mircoprocessor supervisor to generate reset signal
@@ -272,7 +274,7 @@ IC Socket          | U21, U23, U24 | 8 pin DIP                               | 3
 * Version 1.0
   * Initial version
 
-## Known Issues
+### Known Issues
 * Version 1.1
   * Top silkscreen: "Ь" and "X" key labels are swapped
   * Top silkscreen: More correct translation for "СС" is "SHIFT"
