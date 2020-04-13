@@ -299,6 +299,7 @@ IC Socket          | U21, U23, U24 | 8 pin DIP                               | 3
   * Top silkscreen: "Ь" and "X" key labels are swapped
   * Top silkscreen: More correct translation for "СС" is "SHIFT"
   * Top silkscreen: No copyright year
+  * Video signal generation: Produced video Vpp and the backporch levels are a bit too high. Use R2 = 75 to 100 Ohm, and R5 = 1.5 kOhm for proper video signal levels (Reported by Martin Lukasek)
 
 * Version 1.0
   * 8224 (U2) should use DIP-16 footprint
