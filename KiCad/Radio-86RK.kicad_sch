@@ -6,8 +6,8 @@
 
   (title_block
     (title "Radio-86RK")
-    (date "2022-05-11")
-    (rev "1.2")
+    (date "2022-05-13")
+    (rev "1.3")
     (company "Designed by Sergey Kiselev")
     (comment 1 "Based on the previous work by Alexey Khudyakov and Radio magazine publications")
     (comment 2 "Licensed under CERN-OHL-S: https://cern-ohl.web.cern.ch")
@@ -6803,7 +6803,7 @@
       (reference "R1") (unit 1) (value "33") (footprint "My_Components:Res_762")
     )
     (path "/00000000-0000-0000-0000-000061d307f8/00000000-0000-0000-0000-00006203b77b"
-      (reference "R2") (unit 1) (value "51") (footprint "My_Components:Res_762")
+      (reference "R2") (unit 1) (value "75") (footprint "My_Components:Res_762")
     )
     (path "/00000000-0000-0000-0000-000061d307f8/00000000-0000-0000-0000-00006203b781"
       (reference "R3") (unit 1) (value "150") (footprint "My_Components:Res_762")
@@ -6812,7 +6812,7 @@
       (reference "R4") (unit 1) (value "330") (footprint "My_Components:Res_762")
     )
     (path "/00000000-0000-0000-0000-000061d307f8/00000000-0000-0000-0000-00006203b769"
-      (reference "R5") (unit 1) (value "680") (footprint "My_Components:Res_762")
+      (reference "R5") (unit 1) (value "1.5k") (footprint "My_Components:Res_762")
     )
     (path "/00000000-0000-0000-0000-0000593227e4"
       (reference "R6") (unit 1) (value "1k") (footprint "My_Components:Res_762")
@@ -7028,7 +7028,7 @@
       (reference "SW56") (unit 1) (value "В W") (footprint "Cherry_MX:CHERRY_PCB_100H")
     )
     (path "/00000000-0000-0000-0000-00005e1e4ef5/00000000-0000-0000-0000-00005a6c596b"
-      (reference "SW57") (unit 1) (value "X Ь") (footprint "Cherry_MX:CHERRY_PCB_100H")
+      (reference "SW57") (unit 1) (value "Ь X") (footprint "Cherry_MX:CHERRY_PCB_100H")
     )
     (path "/00000000-0000-0000-0000-00005e1e4ef5/00000000-0000-0000-0000-00005a6c5929"
       (reference "SW58") (unit 1) (value "Ы Y") (footprint "Cherry_MX:CHERRY_PCB_100H")
@@ -7055,7 +7055,7 @@
       (reference "SW65") (unit 1) (value "УС CTRL") (footprint "Cherry_MX:CHERRY_PCB_125H")
     )
     (path "/00000000-0000-0000-0000-00005e1e4ef5/00000000-0000-0000-0000-00005a6c7175"
-      (reference "SW66") (unit 1) (value "CC GRAPH") (footprint "Cherry_MX:CHERRY_PCB_125H")
+      (reference "SW66") (unit 1) (value "CC SHIFT") (footprint "Cherry_MX:CHERRY_PCB_125H")
     )
     (path "/00000000-0000-0000-0000-00005e1e4ef5/00000000-0000-0000-0000-00005a6c717b"
       (reference "SW67") (unit 1) (value "RUS/LAT") (footprint "Cherry_MX:CHERRY_PCB_100H")

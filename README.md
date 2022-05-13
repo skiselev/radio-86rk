@@ -66,9 +66,9 @@ Despite the limitations, the design was fairly successful, many people have buil
 
 ### Schematic and PCB Layout
 
-[Schematic - Version 1.2](KiCad/Radio-86RK-Schematic-1.2.pdf)
+[Schematic - Version 1.3](KiCad/Radio-86RK-Schematic-1.3.pdf)
 
-[PCB Layout - Version 1.2](KiCad/Radio-86RK-Board-1.2.pdf)
+[PCB Layout - Version 1.3](KiCad/Radio-86RK-Board-1.3.pdf)
 
 ### Connectors
 
@@ -286,8 +286,14 @@ IC Socket          | U21, U23, U24 | 8 pin DIP                               | 3
 ## Release Notes
 
 ### Changes
+* Version 1.3
+  * Fix issues from version 1.1 and version 1.2:
+    * Use key labels "Ь X" and "СС SHIFT" on top silkscreen
+    * Video signal generation circuit: use R2 = 75 Ohm and R5 = 1.5 kOhm
+    
 * Version 1.2
   * Add F5 key
+  * Add copyright year on the top silkscreen
 
 * Version 1.1
   * Fix all known issues of version 1.0
@@ -298,6 +304,9 @@ IC Socket          | U21, U23, U24 | 8 pin DIP                               | 3
   * Initial version
 
 ### Known Issues
+* Version 1.3
+  * No known issues
+
 * Version 1.2
   * Top silkscreen: "Ь" and "X" key labels are swapped
   * Top silkscreen: More correct translation for "СС" is "SHIFT"

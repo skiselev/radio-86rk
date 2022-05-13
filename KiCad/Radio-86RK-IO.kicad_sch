@@ -6,8 +6,8 @@
 
   (title_block
     (title "Radio-86RK")
-    (date "2022-05-11")
-    (rev "1.2")
+    (date "2022-05-13")
+    (rev "1.3")
     (company "Designed by Sergey Kiselev")
     (comment 1 "Based on the previous work by Alexey Khudyakov and Radio magazine publications")
     (comment 2 "Licensed under CERN-OHL-S: https://cern-ohl.web.cern.ch")

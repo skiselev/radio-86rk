@@ -6,8 +6,8 @@
 
   (title_block
     (title "Radio-86RK")
-    (date "2022-05-11")
-    (rev "1.2")
+    (date "2022-05-13")
+    (rev "1.3")
     (company "Designed by Sergey Kiselev")
     (comment 1 "Based on the previous work by Alexey Khudyakov and Radio magazine publications")
     (comment 2 "Licensed under CERN-OHL-S: https://cern-ohl.web.cern.ch")
@@ -4498,7 +4498,7 @@
     (in_bom yes) (on_board yes)
     (uuid 00000000-0000-0000-0000-00005a6c596b)
     (property "Reference" "SW57" (id 0) (at 128.27 108.966 0))
-    (property "Value" "X Ь" (id 1) (at 124.46 115.57 0))
+    (property "Value" "Ь X" (id 1) (at 124.46 115.57 0))
     (property "Footprint" "Cherry_MX:CHERRY_PCB_100H" (id 2) (at 124.46 111.76 0)
       (effects (font (size 1.27 1.27)) hide)
     )
@@ -4537,7 +4537,7 @@
     (in_bom yes) (on_board yes)
     (uuid 00000000-0000-0000-0000-00005a6c7175)
     (property "Reference" "SW66" (id 0) (at 194.31 153.416 0))
-    (property "Value" "CC GRAPH" (id 1) (at 190.5 160.02 0))
+    (property "Value" "CC SHIFT" (id 1) (at 190.5 160.02 0))
     (property "Footprint" "Cherry_MX:CHERRY_PCB_125H" (id 2) (at 190.5 156.21 0)
       (effects (font (size 1.27 1.27)) hide)
     )
