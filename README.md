@@ -55,11 +55,11 @@ Despite the limitations, the design was fairly successful, many people have buil
   * CPU INTE output
 * Parallel Interface:
   * Intel 8255А / КР580ВВ55А PPI
-  * 26-pin extpansion header
+  * 26-pin expansion header
 * Serial Interface:
   * Intel 8251А / КР580ВВ51А USART
   * DE-9 connector
-* Built-in 66-keys keyboard
+* Built-in 67-keys keyboard
 * Cassette recorder interface
 
 ## Hardware Documentation
