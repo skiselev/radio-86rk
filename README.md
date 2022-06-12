@@ -143,7 +143,7 @@ Pin | Description | Pin | Description
 
 Component type     | Reference | Description                                 | Quantity | Possible sources and notes
 ------------------ | --------- | ------------------------------------------- | -------- | --------------------------
-PCB                |           | Radio-86RK PCB - Version 1.1                | 1        | Refer to the [RetroBrew Computers Board Inventory](https://retrobrewcomputers.org/doku.php?id=boardinventory) page for ordering information, or order from a PCB manufacturer of your choice using provided Gerber or KiCad files
+PCB                |           | Radio-86RK PCB - Version 1.2                | 1        | Buy from my Tindie store: [Radio-86RK - PCB](https://www.tindie.com/products/weird/radio-86rk-pcb/) or order from a PCB manufacturer of your choice using provided Gerber or KiCad files
 Capacitor          | C1 - C32  | 0.1 uF, MLCC, 5 mm Pitch                    | 32       | Mouser [594-K104K15X7RF53H5](https://www.mouser.com/ProductDetail/594-K104K15X7RF53H5)
 Capacitor          | C33 - C38 | 47 uF, Electrolytic                         | 6 	      | Mouser [80-A750EK476M1EAAE40](https://www.mouser.com/ProductDetail/80-A750EK476M1EAAE40)
 Capacitor          | C39       | 0.22 uF, MLCC, 5 mm Pitch                   | 1        | Mouser [810-FG24X7R1H224KNT0](https://www.mouser.com/ProductDetail/810-FG24X7R1H224KNT0)
