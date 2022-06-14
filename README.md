@@ -177,7 +177,6 @@ Speaker            | SP1       | 12 mm speaker                               | 1
 Keyboard Switch    | SW1 - SW67 | Cherry MX Blue (Clicky)                    | 67       | Mouser [540-MX1A-E1NW](https://www.mouser.com/ProductDetail/540-MX1A-E1NW)
 Switch Leveling Kit | SW11, SW64 | Leveling kit for MX 1x2, 1x2.25, 1x2.75   | 5        | Mouser [540-G99-0742](https://www.mouser.com/ProductDetail/540-G99-0742)
 Switch Leveling Kit | SW64     | Leveling kit for MX 1x8                     | 1        | Mouser [540-G99-0226](https://www.mouser.com/ProductDetail/540-G99-0226) Note: Use one of 540-G99-0742 to build a through hole leveling kit for the spacebar
-
 Tactile Switch     | SW68      | 6 mm Tactile Switch Right Angle             | 1        | Mouser [653-B3F-3152](https://www.mouser.com/ProductDetail/653-B3F-3152)
 Switch Keycap      | SW68      | 4 x 4 mmm Tactile Switch Key Cap, Orange    | 1        | Mouser [653-B32-1020](https://www.mouser.com/ProductDetail/653-B32-1020)
 Integrated Circuit | U1        | Intel 8080A / КР580ВМ80А, CPU               | 1        | Jameco [52046](https://www.jameco.com/z/8080A-Major-Brands-IC-8080A-8-Bit-MOS-MPU_52046.html)
