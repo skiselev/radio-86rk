@@ -1,0 +1,222 @@
+ AS V1.42 Beta [Bld 156] - Source File rom_disk.asm - Page 1 - 3/4/2020 11:48:10
+
+
+       1/       0 :                     ; ROM DISK LOADER FOR RADIO-86RK
+       2/       0 :                     ; TO BE INSTALLED AT 0000H OF ROM DISK
+       3/       0 :                     ; LOADED USING MONITOR COMMANDS R0,200,0 and G
+       4/       0 :                     ; RELOCATES ITSELF FROM 0H TO 7400H
+       5/       0 : =7400H              LOADER: EQU		7400H	; LOADERS ADDRESS
+       6/       0 :                     
+       7/       0 : =0F818H             PRINT:	EQU		0F818H	; MONITOR - PRINT STRING
+       8/       0 : =0F803H             GETCH:	EQU		0F803H	; MONITOR - GET A KEY
+       9/       0 : =0F609H             PUTCH:	EQU		0F609H	; MONITOR - PRINT CHARACTER
+      10/       0 : =4H                 APPS:	EQU		4     	; NUMBER OF APPLICATIONS
+      11/       0 :                     
+      12/    7400 :                     		ORG		LOADER
+      13/    7400 : 21 00 00            		LXI		H,0H	; LOADER SOURCE ADDRESS
+      14/    7403 : 11 00 74            		LXI		D,LOADER; LOADER DESTINATION ADDRESS
+      15/    7406 : 01 00 02            		LXI		B,0200H ; LOADER SIZE
+      16/    7409 :                     LOADER1:
+      17/    7409 : 7E                  		MOV		A,M		; A <- (HL)
+      18/    740A : 12                  		STAX	D		; (DE) <- A
+      19/    740B : 23                  		INX		H		; HL = HL + 1
+      20/    740C : 13                  		INX		D		; DE = DE + 1
+      21/    740D : 0B                  		DCX		B		; BC = BC - 1
+      22/    740E : 78                  		MOV     A,B   	; A <- B
+      23/    740F : B1                  		ORA     C     	; TEST THAT BOTH A AND C == 0
+      24/    7410 : C2 09 00            		JNZ     LOADER1-LOADER ; NOT ZERO, COPY NEXT BYTE
+      25/    7413 : C3 16 74            		JMP		MPRINT	; GO TO LOADER, PRINT MENU
+      26/    7416 :                     
+      27/    7416 : 21 F7 74            MPRINT:	LXI		H,MENU	; PRINT THE CATALOG
+      28/    7419 : CD 18 F8            MINPUT:	CALL	PRINT
+      29/    741C : CD 03 F8            		CALL	GETCH	; GET MENU SELECTION
+      30/    741F : FE 5A               		CPI		'Z'		; RESET MEMORY TO 0?
+      31/    7421 : CA 9D 74            		JZ		ZERO
+      32/    7424 : FE 53               		CPI		'S'		; SAVE EDITOR DATA TO TEMP BUFFER?
+      33/    7426 : CA 78 74            		JZ		SAVE
+      34/    7429 : FE 4C               		CPI		'L'		; LOAD EDITOR DATA FROM TEMP BUFFER?
+      35/    742B : CA 5C 74            		JZ		LOAD
+      36/    742E : D6 30               		SUI		30H		; GET SELECTION NUMBER
+      37/    7430 : FA 16 74            		JM		MPRINT	; NOT A DIGIT, SHOW THE MENU AGAIN
+      38/    7433 : FE 04               		CPI		APPS	; MORE THAN NUMBER OF APPS?
+      39/    7435 : D2 16 74            		JNC     MPRINT	; SHOW THE MENU AGAIN
+      40/    7438 : 47                  		MOV		B,A		; SAVE SELECTION TO REGISTER B
+      41/    7439 : B7                  		ORA		A		; A == 0?
+      42/    743A : C2 41 74            		JNZ		FIND	; FIND APP ENTRY IN THE TABLE
+      43/    743D : AF                  		XRA		A     	; A == 0
+      44/    743E : 32 17 21            		STA		2117H 	; (2117H) <- 0 - CLEAR BASIC PROGRAM?
+      45/    7441 : 11 06 00            FIND:	LXI		DE,6	; DE <- 6 - TABLE ENTRY SIZE
+      46/    7444 : 21 C7 74            		LXI		H,TABLE	; HL <- TABLE OFFSET
+      47/    7447 : AF                  		XRA		A		; A <- 0
+      48/    7448 : B8                  FIND1:	CMP		B     	; COMPARE TABLE ENTRY# TO SELECTION
+      49/    7449 : CA 51 74            		JZ		RUN		; COPY AND RUN APP
+      50/    744C : 19                  		DAD		D		; HL = HL + DE - MOVE TO THE NEXT
+      51/    744D : 3C                  		INR		A     	; A = A + 1 - INCREMENT ENTRY#
+      52/    744E : C3 48 74            		JMP     FIND1	; COMPARE AGAIN
+      53/    7451 : F9                  RUN:	SPHL			; SP <- HL, LOAD ADDRESSES USING SP
+      54/    7452 : E1                  		POP		H		; HL <- APP'S ROM START ADDRESS
+      55/    7453 : D1                  		POP		D		; DE <- APP'S ROM END ADDRESS
+      56/    7454 : C1                  		POP		B		; BC <- APP'S MEMR LOAD ADDRESS
+      57/    7455 : 3B                  		DCX		SP		; SP = SP - 1 - MOVE SP BACK TO
+      58/    7456 : 3B                  		DCX		SP    	; POINT TO APP'S ENTRY POINT
+      59/    7457 :                     ; CALL MONITOR SUBROUTINE TO COPY ROM DISK TO RAM
+      60/    7457 : CD 68 FA            		CALL	0FA68H
+ AS V1.42 Beta [Bld 156] - Source File rom_disk.asm - Page 2 - 3/4/2020 11:48:10
+
+
+      61/    745A : E1                  		POP		H		; HL <- APP'S ENTRY POINT
+      62/    745B : E9                  		PCHL			; PC <- HL - RUN THE APP
+      63/    745C :                     
+      64/    745C :                     ; LOAD - COPY FILE FROM TEMP BUFFER TO MICRON EDITOR BUFFER
+      65/    745C : 21 B2 74            LOAD:	LXI		H,SO4	; PRINT CONFIRMATION
+      66/    745F : CD 18 F8            		CALL	PRINT
+      67/    7462 : 21 00 4A            		LXI		H,4A00H	; HL <- TEMP BUFFER OFFSET
+      68/    7465 : 11 00 21            		LXI		D,2100H	; DE <- EDITOR'S BUFFER OFFSET
+      69/    7468 : 01 FF 28            COPY:	LXI     B,28FFH	; BC <- FILE SIZE
+      70/    746B : 7E                  COPY1:	MOV		A,M		; A <- (HL)
+      71/    746C : 12                  		STAX	D		; (DE) <- A
+      72/    746D : 23                  		INX		H		; HL = HL + 1
+      73/    746E : 13                  		INX		D		; DE = DE + 1
+      74/    746F : 0B                  		DCX		B		; BC = BC - 1
+      75/    7470 : 78                  		MOV		A,B		; A <- B
+      76/    7471 : B1                  		ORA		C		; TEST THAT BOTH A AND C == 0
+      77/    7472 : C2 6B 74            		JNZ     COPY1	; NOT ZERO, COPY NEXT BYTE
+      78/    7475 : C3 16 74            		JMP     MPRINT	; GO TO THE MENU
+      79/    7478 :                     
+      80/    7478 :                     ; SAVE - COPY FILE FROM MICRON EDITOR BUFFER TO TEMP BUFFER
+      81/    7478 :                     ; CHECKS THAT THE FILE SIZE IS LESS OR EQUAL TO 28FFH
+      82/    7478 : 21 00 21            SAVE:	LXI		H,2100H	; HL <- EDITOR'S BUFFER OFFSET
+      83/    747B : 7E                  SAVE1:	MOV		A,M		; A <- (HL)
+      84/    747C : FE FF               		CPI		0FFH	; CHECK FILE SIZE
+      85/    747E : CA 8E 74            		JZ		SAVE2	; FILE SIZE IS OK, COPY
+      86/    7481 : 23                  		INX		H		; HL = HL + 1
+      87/    7482 : 7C                  		MOV		A,H		; A <- H
+      88/    7483 : FE 4A               		CPI		4AH
+      89/    7485 : C2 7B 74            		JNZ		SAVE1	; CHECK NEXT BYTE
+      90/    7488 : 21 B7 74            		LXI		H,LARGE	; FILE IS TOO BIG
+      91/    748B : C3 19 74            		JMP		MINPUT	; PRINT ERROR MESSAGE
+      92/    748E : 21 B3 74            SAVE2:	LXI 	H,SO5 	; PRINT CONFIRMATION
+      93/    7491 : CD 18 F8            		CALL	PRINT
+      94/    7494 : 21 00 21            		LXI		H,2100H	; HL <- EDITOR'S BUFFER OFFSET
+      95/    7497 : 11 00 4A            		LXI		D,4A00H	; DE <- TEMP BUFFER OFFSET
+      96/    749A : C3 68 74            		JMP		COPY	; COPY FILE
+      97/    749D :                     
+      98/    749D :                     ; ZERO - ZERO USER MEMORY FROM 0000H TO 73FFH
+      99/    749D : 21 B3 74            ZERO:	LXI		H,SO5	; PRINT CONFIRMATION
+     100/    74A0 : CD 18 F8            		CALL	PRINT
+     101/    74A3 : 21 00 00            		LXI		H,0		; HL < - 0
+     102/    74A6 : 36 00               ZERO1:	MVI 	M,0		; (HL) <- 0
+     103/    74A8 : 23                  		INX		H		; HL = HL + 1
+     104/    74A9 : 7C                  		MOV		A,H		; A <- H
+     105/    74AA : FE 74               		CPI		74H		; COMPARE ADDRES TO 7400H
+     106/    74AC : C2 A6 74            		JNZ		ZERO1	; ZERO NEXT BYTE
+     107/    74AF : C3 16 74            		JMP 	MPRINT	; GO TO THE MENU
+     108/    74B2 :                     
+     109/    74B2 : 19                  SO4:	DB		19H		; MOVE CURSOR UP
+     110/    74B3 : 19 7F 08 00         SO5:	DB		19H,7FH,08H,0 ; MOVE UP, ?, MOVE LEFT
+     111/    74B7 : 0D 46 49 4C 45 20   LARGE:	DB		0DH,"FILE TOO LARGE",0
+                    54 4F 4F 20 4C 41 
+                    52 47 45 00       
+     112/    74C7 :                     ;TABLE OF APPS ADDRESSES
+     113/    74C7 :                     ;FORMAT: ROM START, ROM END, RAM START
+     114/    74C7 : 00 04 FF 23 00 00   TABLE:	DW		0400H,23FFH,0		; BASIC
+     115/    74CD : 00 24 FF 33 00 00   		DW		2400H,33FFH,0		; EDITOR/ASSM
+     116/    74D3 : 00 34 FF 43 00 00   		DW		3400H,43FFH,0		; EDITOR/DIS
+     117/    74D9 : 00 44 FF 53 00 64   		DW		4400H,53FFH,6400H	; DP/DDT
+     118/    74DF : 00 00 00 00 00 00   		DW		0,0,0				; ADD MORE APPS HERE
+ AS V1.42 Beta [Bld 156] - Source File rom_disk.asm - Page 3 - 3/4/2020 11:48:10
+
+
+     119/    74E5 : 00 00 00 00 00 00   		DW		0,0,0
+     120/    74EB : 00 00 00 00 00 00   		DW		0,0,0
+     121/    74F1 : 00 00 00 00 00 00   		DW		0,0,0
+     122/    74F7 : 1F 0C 0A 52 4F 4D   MENU:	DB		1FH,0CH,0AH,"ROM-DISK/32K V3.0-2020"
+                    2D 44 49 53 4B 2F 
+                    33 32 4B 20 56 33 
+                    2E 30 2D 32 30 32 
+                    30                
+     123/    7510 : 0A 0A 0D 44 49 52   		DB		0AH,0AH,0DH,"DIR:"
+                    3A                
+     124/    7517 : 0D 0A 3C 30 3E 2D   		DB		0DH,0AH,"<0>-BASIC"
+                    42 41 53 49 43    
+     125/    7522 : 0D 0A 3C 31 3E 2D   		DB		0DH,0AH,"<1>-EDITOR/ASSEMBLER"
+                    45 44 49 54 4F 52 
+                    2F 41 53 53 45 4D 
+                    42 4C 45 52       
+     126/    7538 : 0D 0A 3C 32 3E 2D   		DB		0DH,0AH,"<2>-EDITOR/DISASSEMBLER"
+                    45 44 49 54 4F 52 
+                    2F 44 49 53 41 53 
+                    53 45 4D 42 4C 45 
+                    52                
+     127/    7551 : 0D 0A 3C 33 3E 2D   		DB		0DH,0AH,"<3>-DP/DDT"
+                    44 50 2F 44 44 54 
+     128/    755D : 0A 0D               		DB		0AH,0DH
+     129/    755F : 0A 0D 3C 53 3E 2D   		DB		0AH,0DH,"<S>-COPY EDITOR TO TEMP BUFFER"
+                    43 4F 50 59 20 45 
+                    44 49 54 4F 52 20 
+                    54 4F 20 54 45 4D 
+                    50 20 42 55 46 46 
+                    45 52             
+     130/    757F : 0A 0D 3C 4C 3E 2D   		DB		0AH,0DH,"<L>-COPY TEMP BUFFER TO EDITOR"
+                    43 4F 50 59 20 54 
+                    45 4D 50 20 42 55 
+                    46 46 45 52 20 54 
+                    4F 20 45 44 49 54 
+                    4F 52             
+     131/    759F : 0A 0D 3C 5A 3E 2D   		DB		0AH,0DH,"<Z>-ZERO RAM"
+                    5A 45 52 4F 20 52 
+                    41 4D             
+     132/    75AD : 0D 0A 00            		DB		0DH,0AH,0
+     133/    75B0 :                             END
+ AS V1.42 Beta [Bld 156] - Source File rom_disk.asm - Page 4 - 3/4/2020 11:48:10
+
+
+  Symbol Table (* = unused):
+  --------------------------
+
+ APPS :                           4 - | *ARCHITECTURE :  i386-unknown-win32 - |
+*BIGENDIAN :                      0 - | *BRANCHEXT :                      0 - |
+*CASESENSITIVE :                  0 - | *CONSTPI :        3.141592653589793 - |
+ COPY :                        7468 C |  COPY1 :                       746B C |
+*DATE :                    3/4/2020 - | *FALSE :                          0 - |
+ FIND :                        7441 C |  FIND1 :                       7448 C |
+*FULLPMMU :                       1 - |  GETCH :                      0F803 - |
+*HAS64 :                          0 - | *HASDSP :                         0 - |
+*HASFPU :                         0 - | *HASPMMU :                        0 - |
+*INEXTMODE :                      0 - | *INLWORDMODE :                    0 - |
+*INMAXMODE :                      0 - | *INSRCMODE :                      0 - |
+*INSUPMODE :                      0 - |  LARGE :                       74B7 C |
+*LISTON :                         1 - |  LOAD :                        745C C |
+ LOADER :                      7400 - |  LOADER1 :                     7409 C |
+*MACEXP :                         7 - |  MENU :                        74F7 C |
+ MINPUT :                      7419 C | *MOMCPU :                      8080 - |
+*MOMCPUNAME :                  8080 - |  MPRINT :                      7416 C |
+*NESTMAX :                      100 - | *PACKING :                        0 - |
+*PADDING :                        1 - |  PRINT :                      0F818 - |
+*PUTCH :                      0F609 - | *RELAXED :                        0 - |
+ RUN :                         7451 C |  SAVE :                        7478 C |
+ SAVE1 :                       747B C |  SAVE2 :                       748E C |
+ SO4 :                         74B2 C |  SO5 :                         74B3 C |
+ TABLE :                       74C7 C | *TIME :                    11:48:10 - |
+*TRUE :                           1 - | *VERSION :                     142F - |
+ ZERO :                        749D C |  ZERO1 :                       74A6 C |
+
+     52 symbols
+     29 unused symbols
+
+ AS V1.42 Beta [Bld 156] - Source File rom_disk.asm - Page 5 - 3/4/2020 11:48:10
+
+
+  Code Pages:
+  ----------
+
+STANDARD (0 changed characters)
+
+1 code page
+
+0.02 seconds assembly time
+
+    133 lines source file
+      2 passes
+      0 errors
+      0 warnings

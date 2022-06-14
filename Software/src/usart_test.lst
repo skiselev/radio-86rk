@@ -1,0 +1,164 @@
+ AS V1.42 Beta [Bld 156] - Source File usart_test.asm - Page 1 - 2/20/2020 16:52:53
+
+
+       1/       0 :                     ; PPI1 registers
+       2/       0 : =8003H              PPI1_CMD	EQU		8003h
+       3/       0 :                     ; Timer registers
+       4/       0 : =9001H              TIMER_CH1	EQU		9001h
+       5/       0 : =9002H              TIMER_CH2	EQU		9002h
+       6/       0 : =9003H              TIMER_CMD	EQU		9003h
+       7/       0 :                     ; USART registers
+       8/       0 : =0B000H             USART_DATA	EQU		0B000h
+       9/       0 : =0B001H             USART_CMD	EQU		0B001h
+      10/       0 :                     
+      11/       0 : CD 48 00            START:		CALL	USART_INIT
+      12/       3 : CD 19 00            			CALL	SOUND_INIT
+      13/       6 : CD 2E 00            			CALL	SOUND_ENA
+      14/       9 : CD 3A 00            			CALL	DELAY
+      15/       C : CD 34 00            			CALL	SOUND_DIS
+      16/       F :                     
+      17/       F :                     LOOP:
+      18/       F : CD 73 00                        CALL	USART_IN
+      19/      12 : 4F                              MOV		C,A
+      20/      13 : CD 7F 00                        CALL	USART_OUT
+      21/      16 : C3 0F 00                        JMP		LOOP
+      22/      19 :                     
+      23/      19 : 3E B6               SOUND_INIT:	MVI		A,10110110b	; Initialize timer channel 2
+      24/      1B :                     ;					  10------ = channel 2
+      25/      1B :                     ;					    11---- = write/read low and then high byte
+      26/      1B :                     ;					      011- = mode 3, square wave
+      27/      1B :                     ;					         0 = binary counter
+      28/      1B : 32 03 90            			STA		TIMER_CMD
+      29/      1E : 3E 8B               			MVI		A,8Bh		; Divisor - low byte
+      30/      20 : 32 02 90            			STA		TIMER_CH2
+      31/      23 : 3E 1A               			MVI		A,1Ah		; Divisor - high byte
+      32/      25 : 32 02 90            			STA		TIMER_CH2
+      33/      28 : 3E 05               			MVI		A,00000101b ; Enable timer channel 2
+      34/      2A :                     ;					  0------- = Port C bit set/reset
+      35/      2A :                     ;					  -xxx---- = Don't care
+      36/      2A :                     ;					  ----010- = Bit 2 (PC2)
+      37/      2A :                     ;					  -------1 = Set bit
+      38/      2A : 32 03 80            			STA		PPI1_CMD
+      39/      2D : C9                  			RET
+      40/      2E :                     			
+      41/      2E : 3E 03               SOUND_ENA:	MVI		A,00000011b ; Enable speaker
+      42/      30 :                     ;					  0------- = Port C bit set/reset
+      43/      30 :                     ;					  -xxx---- = Don't care
+      44/      30 :                     ;					  ----001- = Bit 1 (PC1)
+      45/      30 :                     ;					  -------1 = Set bit
+      46/      30 : 32 03 80            			STA		PPI1_CMD
+      47/      33 : C9                  			RET
+      48/      34 :                     
+      49/      34 : 3E 02               SOUND_DIS:	MVI		A,00000010b ; Enable speaker
+      50/      36 :                     ;					  0------- = Port C bit set/reset
+      51/      36 :                     ;					  -xxx---- = Don't care
+      52/      36 :                     ;					  ----001- = Bit 1 (PC1)
+      53/      36 :                     ;					  -------0 = Reset bit
+      54/      36 : 32 03 80            			STA		PPI1_CMD
+      55/      39 : C9                  			RET
+      56/      3A :                     			
+      57/      3A : 3E FF               DELAY:		MVI     A,0FFh
+      58/      3C : 47                  			MOV     B,A
+      59/      3D : 3D                  PT1:		DCR     A
+      60/      3E : 05                  PT2:		DCR     B
+ AS V1.42 Beta [Bld 156] - Source File usart_test.asm - Page 2 - 2/20/2020 16:52:53
+
+
+      61/      3F : C2 3E 00            			JNZ     PT2
+      62/      42 : FE 00               			CPI     00h
+      63/      44 : C2 3D 00            			JNZ     PT1
+      64/      47 : C9                  			RET
+      65/      48 :                     
+      66/      48 : 3E 76               USART_INIT:	MVI		A,01110110b	; Initialize timer channel 1
+      67/      4A :                     ;					  01------ = channel 1
+      68/      4A :                     ;					    11---- = write/read low and then high byte
+      69/      4A :                     ;					      011- = mode 3, square wave
+      70/      4A :                     ;					         0 = binary counter
+      71/      4A : 32 03 90            			STA		TIMER_CMD
+      72/      4D : 3E 0C               			MVI		A,0Ch		; Divisor for 9600 bps - low byte
+      73/      4F :                     ; 5Dh - 1200 bps; 2Еh - 2400 bps; 0x17h - 4800 bps; 0Сh - 9600 bps
+      74/      4F : 32 01 90            			STA		TIMER_CH1
+      75/      52 : 3E 00               			MVI		A,0			; Divisor for 9600 bps - high byte
+      76/      54 : 32 01 90            			STA		TIMER_CH1
+      77/      57 :                     ; Set USART to command mode - configure sync operation, write two dummy sync characters
+      78/      57 : 32 01 B0            			STA		USART_CMD	; Note, A = 0
+      79/      5A : 32 01 B0            			STA		USART_CMD	; Note, A = 0
+      80/      5D : 32 01 B0            			STA		USART_CMD	; Note, A = 0
+      81/      60 :                     ; Issue reset command
+      82/      60 : 3E 40               			MVI		A,40h
+      83/      62 : 32 01 B0            			STA		USART_CMD
+      84/      65 :                     ; Write mode instruction - 1 stop bit, no parity, 8 bits, divide clock by 16
+      85/      65 : 3E 4E               			MVI		A,4Eh
+      86/      67 : 32 01 B0            			STA		USART_CMD
+      87/      6A :                     ; Write command instruction - activate RTS, reset error flags, enable RX, activate DTR, enable TX
+      88/      6A : 3E 37               			MVI     A,37h
+      89/      6C : 32 01 B0            			STA		USART_CMD
+      90/      6F :                     ; Clear the data register
+      91/      6F : 3A 00 B0            			LDA		USART_DATA
+      92/      72 : C9                  			RET
+      93/      73 :                     
+      94/      73 :                     ; Read byte from USART, wait if there is no data. Output: A - data from USART
+      95/      73 : 3A 01 B0            USART_IN:	LDA		USART_CMD	; Read USART status
+      96/      76 : E6 02               			ANI		2			; Test RxRdy bit
+      97/      78 : CA 73 00            			JZ		USART_IN	; Wait for the data
+      98/      7B : 3A 00 B0            			LDA		USART_DATA	; Read data
+      99/      7E : C9                  			RET
+     100/      7F :                     
+     101/      7F :                     ; Write byte to USART. Input: C - byte to write
+     102/      7F : 3A 01 B0            USART_OUT:	LDA		USART_CMD	; Read USART status
+     103/      82 : E6 01               			ANI		1			; Test TxRdy bit
+     104/      84 : CA 7F 00            			JZ		USART_OUT	; Wait until USART is ready to transmit
+     105/      87 : 79                  			MOV		A,C
+     106/      88 : 32 00 B0            			STA		USART_DATA	; Write character
+     107/      8B : C9                  			RET
+     108/      8C :                     			
+     109/      8C :                     			
+ AS V1.42 Beta [Bld 156] - Source File usart_test.asm - Page 3 - 2/20/2020 16:52:53
+
+
+  Symbol Table (* = unused):
+  --------------------------
+
+*ARCHITECTURE :  i386-unknown-win32 - | *BIGENDIAN :                      0 - |
+*BRANCHEXT :                      0 - | *CASESENSITIVE :                  0 - |
+*CONSTPI :        3.141592653589793 - | *DATE :                   2/20/2020 - |
+ DELAY :                         3A C | *FALSE :                          0 - |
+*FULLPMMU :                       1 - | *HAS64 :                          0 - |
+*HASDSP :                         0 - | *HASFPU :                         0 - |
+*HASPMMU :                        0 - | *INEXTMODE :                      0 - |
+*INLWORDMODE :                    0 - | *INMAXMODE :                      0 - |
+*INSRCMODE :                      0 - | *INSUPMODE :                      0 - |
+*LISTON :                         1 - |  LOOP :                          0F C |
+*MACEXP :                         7 - | *MOMCPU :                      8080 - |
+*MOMCPUNAME :                  8080 - | *NESTMAX :                      100 - |
+*PACKING :                        0 - | *PADDING :                        1 - |
+ PPI1_CMD :                    8003 - |  PT1 :                           3D C |
+ PT2 :                           3E C | *RELAXED :                        0 - |
+ SOUND_DIS :                     34 C |  SOUND_ENA :                     2E C |
+ SOUND_INIT :                    19 C | *START :                          0 C |
+*TIME :                    16:52:53 - |  TIMER_CH1 :                   9001 - |
+ TIMER_CH2 :                   9002 - |  TIMER_CMD :                   9003 - |
+*TRUE :                           1 - |  USART_CMD :                  0B001 - |
+ USART_DATA :                 0B000 - |  USART_IN :                      73 C |
+ USART_INIT :                    48 C |  USART_OUT :                     7F C |
+*VERSION :                     142F - |
+
+     45 symbols
+     29 unused symbols
+
+ AS V1.42 Beta [Bld 156] - Source File usart_test.asm - Page 4 - 2/20/2020 16:52:53
+
+
+  Code Pages:
+  ----------
+
+STANDARD (0 changed characters)
+
+1 code page
+
+0.03 seconds assembly time
+
+    109 lines source file
+      2 passes
+      0 errors
+      0 warnings
