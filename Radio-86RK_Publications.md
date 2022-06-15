@@ -2,6 +2,16 @@
 
 ## Table of Content
 
+* [Radio 1985, Issue 1](#radio-1985-issue-1)
+  * [BASIC For Micro-80, Part 1](#basic-for-micro-80-part-1)
+* [Radio 1985, Issue 2](#radio-1985-issue-2)
+  * [BASIC For Micro-80, Part 2](#basic-for-micro-80-part-2)
+* [Radio 1985, Issue 3](#radio-1985-issue-3)
+  * [BASIC For Micro-80, Part 3](#basic-for-micro-80-part-3)
+* [Radio 1986, Issue 3](#radio-1986-issue-3)
+  * [BASIC Programming](#basic-programming)
+* [Radio 1986, Issue 4](#radio-1986-issue-4)
+  * [Computer Architecture](#computer-architecture)
 * [Radio 1986, Issue 5](#radio-1986-issue-5)
   * [CPU](#cpu)
   * [Memory and I/O Address Decode, RAM, Mainboard Schematic](#memory-and-io-address-decode-ram-mainboard-schematic)
@@ -44,6 +54,49 @@
   * [Serial Interface Controller Based on Intel 8251A (KR580VV51A) - Design Description, Schematic and PCB Layout](#serial-interface-controller-based-on-intel-8251a-kr580vv51a---design-description-schematic-and-pcb-layout)
 * [Radio 1989, Issue 7](#radio-1989-issue-7)
   * [Serial Interface Controller Based on Intel 8251A (KR580VV51A) - Software Subroutines](#serial-interface-controller-based-on-intel-8251a-kr580vv51a---software-subroutines)
+
+## Radio 1985, Issue 1
+
+### BASIC For Micro-80, Part 1
+
+![Radio_Magazine-1985-01-page-33-BASIC.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1985-01-page-33-BASIC.jpg)
+![Radio_Magazine-1985-01-page-34-BASIC.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1985-01-page-34-BASIC.jpg)
+![Radio_Magazine-1985-01-page-35-BASIC.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1985-01-page-35-BASIC.jpg)
+![Radio_Magazine-1985-01-page-36-BASIC.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1985-01-page-36-BASIC.jpg)
+
+## Radio 1985, Issue 2
+
+### BASIC For Micro-80, Part 2
+
+![Radio_Magazine-1985-02-page-39-BASIC.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1985-02-page-39-BASIC.jpg)
+![Radio_Magazine-1985-02-page-40-BASIC.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1985-02-page-40-BASIC.jpg)
+![Radio_Magazine-1985-02-page-41-BASIC.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1985-02-page-41-BASIC.jpg)
+![Radio_Magazine-1985-02-page-42-BASIC.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1985-02-page-42-BASIC.jpg)
+
+## Radio 1985, Issue 3
+
+### BASIC For Micro-80, Part 3
+
+![Radio_Magazine-1985-03-page-42-BASIC.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1985-03-page-42-BASIC.jpg)
+![Radio_Magazine-1985-03-page-43-BASIC.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1985-03-page-43-BASIC.jpg)
+![Radio_Magazine-1985-03-page-44-BASIC.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1985-03-page-44-BASIC.jpg)
+![Radio_Magazine-1985-03-page-45-BASIC.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1985-03-page-45-BASIC.jpg)
+
+## Radio 1986, Issue 3
+
+### BASIC Programming
+
+![Radio_Magazine-1986-03-page-30-BASIC_Programming.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1986-03-page-30-BASIC_Programming.jpg)
+![Radio_Magazine-1986-03-page-31-BASIC_Programming.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1986-03-page-31-BASIC_Programming.jpg)
+![Radio_Magazine-1986-03-page-32-BASIC_Programming.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1986-03-page-32-BASIC_Programming.jpg)
+
+## Radio 1986, Issue 4
+
+### Computer Architecture
+
+![Radio_Magazine-1986-04-page-24-Computer_Architecture.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1986-04-page-24-Computer_Architecture.jpg)
+![Radio_Magazine-1986-04-page-25-Computer_Architecture.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1986-04-page-25-Computer_Architecture.jpg)
+![Radio_Magazine-1986-04-page-26-Computer_Architecture.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1986-04-page-26-Computer_Architecture.jpg)
 
 ## Radio 1986, Issue 5
 
