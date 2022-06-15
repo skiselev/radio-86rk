@@ -1,45 +1,74 @@
 # Radio Magazine - Radio 86RK Publications
 
+## Table of Content
+
+* [Radio 1986, Issue 5]()
+* 
+
 ## Radio 1986, Issue 5
 
-### CPU, Memory and I/O Address Decode, RAM, Mainboard Schematic, DMA Controller, CRT Controller, Sound Generation
+### CPU
 
 ![Radio_Magazine-1986-05-page-31.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1986-05-page-31.jpg)
+
+### Memory and I/O Address Decode, RAM, Mainboard Schematic
+
 ![Radio_Magazine-1986-05-page-32-33-Schematic.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1986-05-page-32-33-Schematic.jpg)
+
+### DMA Controller, CRT Controller, Sound Generation
+
 ![Radio_Magazine-1986-05-page-34.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1986-05-page-34.jpg)
 
 ## Radio 1986, Issue 6
 
-### Keyboard and Mainboard PCB Layout
+### Keyboard PCB Layout
 
 ![Radio_Magazine-1986-06-Insert_02-Keyboard_PCB.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1986-06-Insert_02-Keyboard_PCB.jpg)
+
+### Mainboard PCB Layout
+
 ![Radio_Magazine-1986-06-Insert_03-Mainboard_PCB.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1986-06-Insert_03-Mainboard_PCB.jpg)
 
-### Keyboard, Font ROM Hex Dump, Keyboard Schematic, Cassette Tape Recorder Interface, Power supply
+### Keyboard
 
 ![Radio_Magazine-1986-06-page-26-Keyboard.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1986-06-page-26-Keyboard.jpg)
+
+### Font ROM Hex Dump, Keyboard Schematic
+
 ![Radio_Magazine-1986-06-page-27-Keyboard.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1986-06-page-27-Keyboard.jpg)
+
+### Keyboard Layout, Cassette Tape Recorder Interface, Power supply
+
 ![Radio_Magazine-1986-06-page-28-Keyboard.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1986-06-page-28-Keyboard.jpg)
 
 ## Radio 1986, Issue 8
 
-### Software - ROM Monitor, ROM Monitor Hex Dump, ROM Monitor Commands, ROM Monitor Subroutines
+### Software, ROM Monitor Boot, ROM Monitor CLI, ROM Monitor Memory Commands
 
 ![Radio_Magazine-1986-08-page-23-Software.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1986-08-page-23-Software.jpg)
+
+### ROM Monitor Hex Dump 
+
 ![Radio_Magazine-1986-08-page-24-Software.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1986-08-page-24-Software.jpg)
+
+### ROM Monitor Run and Debug Commands, ROM Monitor I/O Commands
+
 ![Radio_Magazine-1986-08-page-25-Software.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1986-08-page-25-Software.jpg)
+
+### ROM Monitor Subroutines
+
 ![Radio_Magazine-1986-08-page-26-Software.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1986-08-page-26-Software.jpg)
 
 ## Radio 1986, Issue 9
 
-### Software - ROM Monitor Changes for 32 KiB RAM, Keyboard Notes, Display Control Codes, 
+### Software - ROM Monitor Changes for 32 KiB RAM, Keyboard Notes, Display Control Codes 
 
 ![Radio_Magazine-1986-09-page-27-Software.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1986-09-page-27-Software.jpg)
 ![Radio_Magazine-1986-09-page-28-Software.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1986-09-page-28-Software.jpg)
 
 ## Radio 1986, Issue 11
 
-### Power Supply, Schematic
+### Power Supply - Schematic and Design Description
 
 ![Radio_Magazine-1986-11-page-26-Power_Supply.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1986-11-page-26-Power_Supply.jpg)
 ![Radio_Magazine-1986-11-page-27-Power_Supply.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1986-11-page-27-Power_Supply.jpg)
@@ -48,12 +77,12 @@
 
 ## Radio 1986, Issue 12
 
-### Power Supply, PCB
+### Power Supply - PCB and Assembly Instructions
 
 ![Radio_Magazine-1986-12-page-17-Power_Supply.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1986-12-page-17-Power_Supply.jpg)
 ![Radio_Magazine-1986-12-page-18-Power_Supply.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1986-12-page-18-Power_Supply.jpg)
 
-### Builders' Notes / Errata
+### Builders' Notes and Errata
 
 ![Radio_Magazine-1986-12-page-19-Builder_Notes.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1986-12-page-19-Builder_Notes.jpg)
 
@@ -66,9 +95,12 @@
 
 ## Radio 1987, Issue 2
 
-### BASIC Games, Joystick-like Control
+### BASIC Games - Intersceptor, Joystick-like Control
 
 ![Radio_Magazine-1987-02-page-23-Games.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1987-02-page-23-Games.jpg)
+
+### BASIC Games - Python/Snake
+
 ![Radio_Magazine-1987-02-page-24-Games.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1987-02-page-24-Games.jpg)
 ![Radio_Magazine-1987-02-page-25-Games.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1987-02-page-25-Games.jpg)
 ![Radio_Magazine-1987-02-page-26-Games.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1987-02-page-26-Games.jpg)
@@ -76,10 +108,13 @@
 
 ## Radio 1987, Issue 3
 
-### BASIC Games, ROM cartridge for BASIC
+### BASIC Games - Fox Hunt
 
 ![Radio_Magazine-1987-03-page-30-Games.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1987-03-page-30-Games.jpg)
 ![Radio_Magazine-1987-03-page-31-Games.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1987-03-page-31-Games.jpg)
+
+### ROM cartridge for BASIC Interpreter
+
 ![Radio_Magazine-1987-03-page-32-Games-ROM_Module.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1987-03-page-32-Games-ROM_Module.jpg)
 
 ## Radio 1987, Issue 4
@@ -123,7 +158,7 @@
 
 ## Radio 1989, Issue 6
 
-### Serial Interface Controller - Intel 8251A (KR580VV51A)
+### Serial Interface Controller - Intel 8251A (KR580VV51A) - Design Description, Schematic and PCB Layout
 
 ![Radio_Magazine-1989-06-page-38-Serial_Interface.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1989-06-page-38-Serial_Interface.jpg)
 ![Radio_Magazine-1989-06-page-39-Serial_Interface.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1989-06-page-39-Serial_Interface.jpg)
@@ -133,7 +168,7 @@
 
 ## Radio 1989, Issue 7
 
-### Serial Interface Controller - Intel 8251A (KR580VV51A)
+### Serial Interface Controller - Intel 8251A (KR580VV51A) - Software Subroutines
 
 ![Radio_Magazine-1989-07-page-52-Serial_Interface.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1989-07-page-52-Serial_Interface.jpg)
 ![Radio_Magazine-1989-07-page-53-Serial_Interface.jpg](Documentation/Radio_Magazine-Radio-86RK/Radio_Magazine-1989-07-page-53-Serial_Interface.jpg)
