@@ -6,6 +6,7 @@ Re-make of the Soviet Ham Radio computer published in Radio Magazine in 1986
 ## Table of Content
 * [Introduction](#introduction)
 * [Specifications](#specifications)
+* [Project Notes](#project-notes)
 * [Hardware Documentation](#hardware-documentation)
   * [Schematic and PCB Layout](#schematic-and-pcb-layout)
   * [Connectors](#connectors)
@@ -61,6 +62,10 @@ Despite the limitations, the design was fairly successful, many people have buil
   * DE-9 connector
 * Built-in 67-keys keyboard
 * Cassette recorder interface
+
+## Project Notes
+
+Check [Project Notes](Project_Notes.md) for the information about building this project
 
 ## Hardware Documentation
 
