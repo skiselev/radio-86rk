@@ -40,7 +40,7 @@ Despite the limitations, the design was fairly successful, many people have buil
  * Single board design, including an integrated mechanical keyboard
  * The work is largely based on [Radio-86RК-SRAM](http://radio86rk.pbworks.com/w/page/58467718/Radio-86R%D0%9A-SRAM) project created by Alexey Khudyakov (alexcp).
 
-![Radio-86RK](images/Radio-86PK-With_Keyboard.jpg)
+![Radio-86RK](images/Radio-86PK-1.1-With_Keyboard.jpg)
 
 ## Specifications
 * Processor: Intel 8080A / КР580ВМ80А CPU running at 1.78 MHz
