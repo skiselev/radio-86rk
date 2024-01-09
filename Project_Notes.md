@@ -29,8 +29,12 @@ Several new implementations were designed, including [Radio-86RК-SRAM](http://r
 ## Keyboard Layout and Construction
 
 * The keyboard uses Cherry MX keys. Some people that have built my [Omega Home Computer](https://github.com/skiselev/omega) project had success replacing them with Chinese clones (Kailh brand?!)
-* The keyboard layout is [JCUKEN](https://en.wikipedia.org/wiki/JCUKEN). The keys are labeled on the PCB's silkscreen for your convenience. The JCUKEN layout is a standard Cyrillic/Russian keyboard layout with Latin letters placed with similar Cyrillic letters. It might be a bit of pain to get used to :smile:
-* Since JCUKEN keycaps are not readily available, in my build I've used blank [Cherry MX compatible keycaps](https://www.amazon.com/dp/B07GP29DQF/), and printed the letters on transparent labels using a label printer
+* Keyboard Layout - Version 1.4
+  * Version 1.4 uses QWERTY layout. Note that location of math, punctuation and other special symbols is a bit different from typical modern QWERTY keyboard
+  * Common keycaps can be used, XDA or DSA keycaps are recommended, as they have uniform shape regardless of the row. XDA have a bit more vintage, rounded feel to them too
+* Keyboard Layout - Versions 1.0 - 1.3
+  * The keyboard layout is [JCUKEN](https://en.wikipedia.org/wiki/JCUKEN). The keys are labeled on the PCB's silkscreen for your convenience. The JCUKEN layout is a standard Cyrillic/Russian keyboard layout with Latin letters placed with similar Cyrillic letters. It might be a bit of pain to get used to :smile:
+  * Since JCUKEN keycaps are not readily available, in my build I've used blank [Cherry MX compatible keycaps](https://www.amazon.com/dp/B07GP29DQF/), and printed the letters on transparent labels using a label printer
 
 ## Video Output
 
