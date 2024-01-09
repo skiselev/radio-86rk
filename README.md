@@ -69,11 +69,17 @@ Check [Project Notes](Project_Notes.md) for the information about building this 
 
 ## Hardware Documentation
 
+### Documentation for the Previous Versions
+
+* [Version 1.3](https://github.com/skiselev/radio-86rk/tree/v1.3)
+* [Version 1.2](https://github.com/skiselev/radio-86rk/tree/v1.2)
+* [Version 1.1](https://github.com/skiselev/radio-86rk/tree/v1.1)
+
+
 ### Schematic and PCB Layout
 
-[Schematic - Version 1.3](KiCad/Radio-86RK-Schematic-1.3.pdf)
-
-[PCB Layout - Version 1.3](KiCad/Radio-86RK-Board-1.3.pdf)
+* [Schematic - Version 1.4](KiCad/Radio-86RK-Schematic-1.4.pdf)
+* [PCB Layout - Version 1.4](KiCad/Radio-86RK-Board-1.4.pdf)
 
 ### Connectors
 
@@ -150,7 +156,7 @@ Pin | Description | Pin | Description
 
 Component type     | Reference | Description                                 | Quantity | Possible sources and notes
 ------------------ | --------- | ------------------------------------------- | -------- | --------------------------
-PCB                |           | Radio-86RK PCB - Version 1.2 or 1.3         | 1        | Buy from my Tindie store: [Radio-86RK - PCB](https://www.tindie.com/products/weird/radio-86rk-pcb/) or order from a PCB manufacturer of your choice using provided Gerber or KiCad files
+PCB                |           | Radio-86RK PCB                              | 1        | Buy from my Tindie store: [Radio-86RK - PCB](https://www.tindie.com/products/weird/radio-86rk-pcb/) or order from a PCB manufacturer of your choice using provided Gerber or KiCad files
 Capacitor          | C1 - C32  | 0.1 uF, MLCC, 5 mm Pitch                    | 32       | Mouser [594-K104K15X7RF53H5](https://www.mouser.com/ProductDetail/594-K104K15X7RF53H5)
 Capacitor          | C33 - C38 | 47 uF, 25V, Electrolytic or Organic Polymer | 6 	      | Mouser [80-A750EK476M1EAAE40](https://www.mouser.com/ProductDetail/80-A750EK476M1EAAE40)
 Capacitor          | C39       | 0.22 uF, MLCC, 5 mm Pitch                   | 1        | Mouser [810-FG24X7R1H224KNT0](https://www.mouser.com/ProductDetail/810-FG24X7R1H224KNT0)
@@ -163,12 +169,15 @@ Diode              | D1 - D9  | 1N4148                                       | 9
 LED                | D10       | LED Indicator, 3 mm, Green                  | 1        | Mouser [630-HLMP-1503-C0002](https://www.mouser.com/ProductDetail/630-HLMP-1503-C0002)
 LED                | D11       | LED Indicator, 3 mm, Yellow                 | 1        | Mouser [630-HLMP-1401](https://www.mouser.com/ProductDetail/630-HLMP-1401)
 Polyfuse           | F1        | 1.1A, 5 mm Pitch                            | 1        | Mouser [576-16R110BU](https://www.mouser.com/ProductDetail/576-16R110BU)
+Connector          | JP1, JP2  | 4 pin header, 2.54 mm Pitch                 | 2        | Mouser [649-68000-204HLF](https://www.mouser.com/ProductDetail/649-68000-204HLF)
+Connector          | JP1, JP2  | jumper, 2.54 mm Pitch                       | 4        | Mouser [806-SX1100-B)](https://www.mouser.com/ProductDetail/806-SX1100-B)
 Connector          | J1        | RCA Phono connector, Yellow                 | 1        | Mouser [490-RCJ-014](https://www.mouser.com/ProductDetail/490-RCJ-014)
 Connector          | J2        | DC Power Jack, 2mm                          | 1        | Mouser [806-KLDX-0202-A](https://www.mouser.com/ProductDetail/806-KLDX-0202-A)
 Connector          | J3        | 8 pin friction lock connector               | 1        | Mouser [571-6404568](https://www.mouser.com/ProductDetail/571-6404568)
 Connector          | J4        | DIN 8-pos, Right Angle, PCB mount           | 1        | Mouser [490-SDF-80J](https://www.mouser.com/ProductDetail/490-SDF-80J)
 Connector          | J5        | Sub-D DE9M, Right Angle, PCB mount          | 1        | Mouser [523-L717SDE09P1ACH3R](https://www.mouser.com/ProductDetail/523-L717SDE09P1ACH3R)
 Connector          | J6        | 13x2 pin header, shrouded                   | 1        | Mouser [517-30326-6002](https://www.mouser.com/ProductDetail/517-30326-6002)
+Connector          | J7        | 20x1 pin socket                             | 1        | Mouser [517-929850-01-20-RB](https://www.mouser.com/ProductDetail/517-929850-01-20-RB). Note: Optional, for extension board connection
 Transistor         | Q1, Q2    | 2N3904                                      | 2        | Mouser [512-2N3904TA](https://www.mouser.com/ProductDetail/512-2N3904TA)
 Resistor           | R1        | 33 ohm                                      | 1        | Mouser [660-CF1/4CT52R330J](https://www.mouser.com/ProductDetail/660-CF1-4CT52R330J)
 Resistor           | R2        | 75 ohm                                      | 1        | Mouser [660-CF1/4CT52R750J](https://www.mouser.com/ProductDetail/660-CF1-4CT52R750J)
@@ -194,7 +203,7 @@ Integrated Circuit | U5, U6    | Intel 8255А / КР580ВВ55А, PPI            
 Integrated Circuit | U7        | Intel 8257 / КР580ВТ57, DMA Controller      | 1        | Unicorn Electronics [8257](https://www.unicornelectronics.com/IC/8000.html)
 Integrated Circuit | U8        | Intel 8275 / КР580ВГ75, CRT Controller      | 1        | Unicorn Electronics [8275](https://www.unicornelectronics.com/IC/8000.html), Jameco [52821](https://www.jameco.com/z/8275-Major-Brands-Programmable-CRT-Controller-DIP-40_52821.html)
 Integrated Circuit | U9        | AS6C62256, SRAM 32Kx8                       | 1        | Mouser [913-AS6C62256-55PCN](https://www.mouser.com/ProductDetail/913-AS6C62256-55PCN), Unicorn Electronics [62256LP](https://www.unicornelectronics.com/IC/STATIC.html)
-Integrated Circuit | U10, U11  | 2716 / КР573РФ5, 2Kx8 EPROM                 | 2        | Unicorn Electronics [2716](https://www.unicornelectronics.com/IC/EPROM.html)
+Integrated Circuit | U10, U11  | 2716 / КР573РФ5, 2Kx8 EPROM                 | 2        | Mouser [556-AT28C64B15PU](https://www.mouser.com/ProductDetail/556-AT28C64B15PU), Unicorn Electronics [2716](https://www.unicornelectronics.com/IC/EPROM.html). Note: 2716, 2732, 2764, 27C64 EPROMs, or 28C64 EEPROMs can be used
 Integrated Circuit | U12       | 74LS373/К555ИР22, 8-bit Latch, 3-state outputs | 1     | Mouser [595-SN74LS373N](https://www.mouser.com/ProductDetail/595-SN74LS373N)
 Integrated Circuit | U13       | 74198/К155ИР13, 8-bit Shift Register        | 1        | Unicorn Electronics [74198](https://www.unicornelectronics.com/IC/7400.html)
 Integrated Circuit | U14       | 74LS138/К555ИД7, Decoder 3 to 8 active low outputs | 1 | Mouser [595-SN74LS138N](https://www.mouser.com/ProductDetail/595-SN74LS138N), Unicorn Electronics [74LS138](https://www.unicornelectronics.com/IC/74LS.html)
@@ -212,8 +221,8 @@ DC-DC Converter    | U26       | IZ0512, +/-12V +/-125mA, 4.5V-9V input      | 1
 Integrated Circuit | U27       | DS1233-5, CPU Supervisory Circuit           | 1        | Mouser [700-DS1233-5T&R](https://www.mouser.com/ProductDetail/700-DS1233-5TR)
 Crystal            | Y1        | 16 MHz, Series, HC-49U                      | 1        | Mouser [774-ATS160-E](https://www.mouser.com/ProductDetail/774-ATS160-E)
 IC Socket          | U1, U5, U6, U7, U8 | 40 pin DIP                         | 5        | Mouser [649-DILB40P223TLF](https://www.mouser.com/ProductDetail/649-DILB40P223TLF), [517-4840-6000-CP](https://www.mouser.com/ProductDetail/517-4840-6000-CP)
-IC Socket          | U3, U9    | 28 pin DIP                                  | 2        | Mouser [649-DILB28P223TLF](https://www.mouser.com/ProductDetail/649-DILB28P223TLF), [517-4828-6000-CP](https://www.mouser.com/ProductDetail/517-4828-6000-CP)
-IC Socket          | U4, U10, U11, U13 | 24 pin DIP                          | 4        | Mouser [649-DILB24P-223TLF](https://www.mouser.com/ProductDetail/649-DILB24P-223TLF), [517-4824-6000-CP](https://www.mouser.com/ProductDetail/517-4824-6000-CP)
+IC Socket          | U3, U9, U10, U11    | 28 pin DIP                                  | 4        | Mouser [649-DILB28P223TLF](https://www.mouser.com/ProductDetail/649-DILB28P223TLF), [517-4828-6000-CP](https://www.mouser.com/ProductDetail/517-4828-6000-CP)
+IC Socket          | U4, U13   | 24 pin DIP                          | 2        | Mouser [649-DILB24P-223TLF](https://www.mouser.com/ProductDetail/649-DILB24P-223TLF), [517-4824-6000-CP](https://www.mouser.com/ProductDetail/517-4824-6000-CP)
 IC Socket          | U12       | 20 pin DIP                                  | 1        | Mouser [649-DILB20P-223TLF](https://www.mouser.com/ProductDetail/649-DILB20P-223TLF), [517-4820-3000-CP](https://www.mouser.com/ProductDetail/517-4820-3000-CP)
 IC Socket          | U2, U14, U22 | 16 pin DIP                               | 3        | Mouser [649-DILB16P-223TLF](https://www.mouser.com/ProductDetail/649-DILB16P-223TLF), [517-4816-3000-CP](https://www.mouser.com/ProductDetail/517-4816-3000-CP)
 IC Socket          | U15 - U20 | 14 pin DIP                                  | 6        | Mouser [649-DILB14P-223TLF](https://www.mouser.com/ProductDetail/649-DILB14P-223TLF), [517-4814-3000-CP](https://www.mouser.com/ProductDetail/517-4814-3000-CP)
@@ -296,6 +305,11 @@ IC Socket          | U21, U23, U24 | 8 pin DIP                               | 3
 ## Release Notes
 
 ### Changes
+* Version 1.4
+  * Change keyboard layout to QWERTY
+  * Add the J7 extension connector
+  * Add support for 2732, 2764 and 27C64 EPROMs and 28C64 EEPROM.
+
 * Version 1.3
   * Fix issues from version 1.1 and version 1.2:
     * Use key labels "Ь X" and "СС SHIFT" on top silkscreen

@@ -33,9 +33,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 3.048,
-          "height": 4.064,
-          "width": 4.064
+          "drill": 1.3,
+          "height": 2.3,
+          "width": 2.3
         },
         "silk_line_width": 0.15,
         "silk_text_italic": false,
@@ -121,6 +121,7 @@
       },
       "track_widths": [
         0.0,
+        0.2032,
         0.254,
         0.375,
         0.5,
@@ -427,8 +428,7 @@
           "+12V",
           "-12V",
           "-5V",
-          "/Input_Output/PVCC",
-          "VCC"
+          "/Input_Output/PVCC"
         ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
