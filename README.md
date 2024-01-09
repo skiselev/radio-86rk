@@ -40,7 +40,7 @@ Despite the limitations, the design was fairly successful, many people have buil
  * Single board design, including an integrated mechanical keyboard
  * The work is largely based on [Radio-86RК-SRAM](http://radio86rk.pbworks.com/w/page/58467718/Radio-86R%D0%9A-SRAM) project created by Alexey Khudyakov (alexcp).
 
-![Radio-86RK](images/Radio-86PK-1.1-With_Keyboard.jpg)
+![Radio-86RK](images/Radio-86RK-1.4-Assembled-1024px.jpg)
 
 ## Specifications
 * Processor: Intel 8080A / КР580ВМ80А CPU running at 1.78 MHz
@@ -170,7 +170,7 @@ LED                | D10       | LED Indicator, 3 mm, Green                  | 1
 LED                | D11       | LED Indicator, 3 mm, Yellow                 | 1        | Mouser [630-HLMP-1401](https://www.mouser.com/ProductDetail/630-HLMP-1401)
 Polyfuse           | F1        | 1.1A, 5 mm Pitch                            | 1        | Mouser [576-16R110BU](https://www.mouser.com/ProductDetail/576-16R110BU)
 Connector          | JP1, JP2  | 4 pin header, 2.54 mm Pitch                 | 2        | Mouser [649-68000-204HLF](https://www.mouser.com/ProductDetail/649-68000-204HLF)
-Connector          | JP1, JP2  | jumper, 2.54 mm Pitch                       | 4        | Mouser [806-SX1100-B)](https://www.mouser.com/ProductDetail/806-SX1100-B)
+Connector          | JP1, JP2  | Jumper, 2.54 mm Pitch                       | 4        | Mouser [806-SX1100-B)](https://www.mouser.com/ProductDetail/806-SX1100-B)
 Connector          | J1        | RCA Phono connector, Yellow                 | 1        | Mouser [490-RCJ-014](https://www.mouser.com/ProductDetail/490-RCJ-014)
 Connector          | J2        | DC Power Jack, 2mm                          | 1        | Mouser [806-KLDX-0202-A](https://www.mouser.com/ProductDetail/806-KLDX-0202-A)
 Connector          | J3        | 8 pin friction lock connector               | 1        | Mouser [571-6404568](https://www.mouser.com/ProductDetail/571-6404568)
