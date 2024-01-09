@@ -31,7 +31,7 @@ Several new implementations were designed, including [Radio-86RК-SRAM](http://r
 * The keyboard uses Cherry MX keys. Some people that have built my [Omega Home Computer](https://github.com/skiselev/omega) project had success replacing them with Chinese clones (Kailh brand?!)
 * Keyboard Layout - Version 1.4
   * Version 1.4 uses QWERTY layout. Note that location of math, punctuation and other special symbols is a bit different from typical modern QWERTY keyboard
-  * Common keycaps can be used, XDA or DSA keycaps are recommended, as they have uniform shape regardless of the row. XDA have a bit more vintage, rounded feel to them too
+  * Common Cherry MX compatible keycaps can be used. XDA or DSA keycaps are recommended, as they have uniform shape regardless of the row. XDA have a bit more vintage, rounded feel to them too
 * Keyboard Layout - Versions 1.0 - 1.3
   * The keyboard layout is [JCUKEN](https://en.wikipedia.org/wiki/JCUKEN). The keys are labeled on the PCB's silkscreen for your convenience. The JCUKEN layout is a standard Cyrillic/Russian keyboard layout with Latin letters placed with similar Cyrillic letters. It might be a bit of pain to get used to :smile:
   * Since JCUKEN keycaps are not readily available, in my build I've used blank [Cherry MX compatible keycaps](https://www.amazon.com/dp/B07GP29DQF/), and printed the letters on transparent labels using a label printer
@@ -45,6 +45,11 @@ It is also possible to use a composite to HDMI adapter, such as [this one](https
 ## Monitor and Font ROMs
 
 The [Monitor ROM](https://github.com/skiselev/radio-86rk/blob/master/Software/radio-86rk-monitor-video-attr.bin) and the [Font ROM](https://github.com/skiselev/radio-86rk/blob/master/Software/radio-86rk-font.bin) are provided in this repository
+
+Version 1.4 add support to 2732, 2764 and 27C64 EPROMs, and 28C64 EEPROM:
+* Please set the JP1 and JP2 jumpers according to the EPROM/EEPROM type used
+* For the monitor ROM, if using a 4 KiB or an 8 KiB ROM, program the ROM image to the top of the address space (top 2 KiB)
+* For the font ROM, if using a 4 KiB or an 8 KiB ROM, program the ROM image to the bottom of the address space (bottom 2 KiB)
 
 ## ROM Cartridges
 
